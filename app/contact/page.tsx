@@ -8,11 +8,11 @@ import { RfqQueryForm } from "@/components/rfq-query-form";
 
 export const metadata: Metadata = {
   title: "Contact / Request a Quote",
-  description: "Preview the MAIVIDA RFQ form with your product model, quantity and machining requirements. Demo only; no enquiries are transmitted.",
+  description: "Send the MAIVIDA sales team your product model, quantity and machining requirements through the online RFQ form.",
   alternates: { canonical: absoluteUrl("/contact") },
   openGraph: {
     title: "Contact / Request a Quote | MAIVIDA",
-    description: "A model. A requirement. Preview a specification-led tooling enquiry. Demo form only.",
+    description: "A model. A requirement. Send a specification-led tooling enquiry to the MAIVIDA sales team.",
     ...(absoluteUrl("/contact") ? { url: absoluteUrl("/contact") } : {}),
   },
 };

@@ -16,9 +16,10 @@ test("RFQ form contains exactly the seven requested fields and a model prefill",
     assert.ok(html.includes(`for="rfq-${field.name}"`));
   }
   assert.match(html, /value="PCBNR\/L"/);
-  assert.match(html, /Demo form/);
-  assert.match(html, /Details are not sent or saved/);
-  assert.match(html, /<fieldset disabled=""/); // No accidental native GET before hydration.
+  assert.match(html, /Request a Quote/);
+  assert.match(html, /action="https:\/\/formspree\.io\/f\/xjywkpzg"/);
+  assert.match(html, /method="POST"/);
+  assert.match(html, /name="_subject"/);
 });
 
 test("RFQ required fields, email, quantity and length use English validation", () => {
@@ -38,9 +39,10 @@ test("RFQ query prefill hides TBD, bilingual references and repeated query value
   assert.equal(rfqModel("x".repeat(250)).length, 200);
 });
 
-test("demo has no transmission, storage, fake delivery or response-time promises", () => {
+test("RFQ form submits to Formspree and handles provider responses", () => {
   const code = readFileSync("components/rfq-form.tsx", "utf8");
-  assert.doesNotMatch(code, /\bfetch\s*\(|localStorage|sessionStorage|24 hours/);
-  assert.match(code, /no enquiry has been sent/i);
-  assert.match(code, /RESEND_API_KEY/);
+  assert.match(code, /https:\/\/formspree\.io\/f\/xjywkpzg/);
+  assert.match(code, /method: "POST"/);
+  assert.match(code, /response\.ok/);
+  assert.doesNotMatch(code, /localStorage|sessionStorage/);
 });

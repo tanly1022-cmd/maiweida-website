@@ -39,15 +39,15 @@ Replace files under `public/images/products/` and set each product's `image` to 
 
 `/contact` has the seven requested fields: Name, Company, Email, Country, Product Model, Quantity and Message. All Request a Quote links target this page; product-specific links prefill `?model=...`. Model and quantity are optional. Required fields, email syntax, field lengths and positive-integer quantities are validated in English. Errors and completion receive accessible focus.
 
-**The form is deliberately a demo, including on a public deployment.** It is labeled before submission and in its success state. No personal details are sent, saved in browser storage, emailed or persisted. The demo does not promise a response within 24 hours. Do not use it for real enquiries until a service is connected.
+**The RFQ form submits to the configured Formspree endpoint.** Client-side validation runs before submission, and the success state is shown only after Formspree returns a successful response. Configure the endpoint in `NEXT_PUBLIC_FORMSPREE_ENDPOINT` before deployment; the repository includes the current public endpoint as the default fallback.
 
-Integration points are commented in `components/rfq-form.tsx`. For Formspree, configure a verified `NEXT_PUBLIC_FORMSPREE_ENDPOINT` and handle the provider's response before displaying a real submission confirmation. For Resend, add a server-side Route Handler and set `RESEND_API_KEY` only in server environment variables. Never expose secrets through a `NEXT_PUBLIC_*` variable or a Client Component. Add server-side validation, rate limiting, spam protection, appropriate consent/privacy information and genuine failure handling before accepting real enquiries. Setting environment variables alone does not enable delivery.
+The form implementation is in `components/rfq-form.tsx`. It posts the seven RFQ fields plus a subject line to Formspree and surfaces provider failures to the user. The endpoint is public by design, but keep any future server-side secrets out of `NEXT_PUBLIC_*` variables. Add server-side validation, rate limiting, spam protection and appropriate consent/privacy information before expanding the form.
 
 ## Contact and deployment configuration
 
 Copy `.env.example` to `.env.local`. Set `NEXT_PUBLIC_CONTACT_EMAIL` to a verified business address; leave it empty to hide the address. Set `NEXT_PUBLIC_SITE_URL` to the final HTTPS production origin for canonical, Open Graph and structured-data URLs. Never put secrets in `NEXT_PUBLIC_*` variables.
 
-Implemented routes: Home, Products, Product Detail, and Contact / RFQ. About and Industries destinations in the pre-existing navigation remain unfinished; do not represent them as completed pages. The RFQ is a demonstration, not an operational sales inbox.
+Implemented routes: Home, Products, Product Detail, and Contact / RFQ. About and Industries destinations in the pre-existing navigation remain unfinished; do not represent them as completed pages. The RFQ submits through Formspree to the configured sales inbox.
 
 For Vercel, run the commands from this directory (the Next.js project root):
 
@@ -56,7 +56,7 @@ npx.cmd vercel login
 npx.cmd vercel --prod
 ```
 
-Alternatively import the project through Vercel and select the Next.js preset, Node 22, build command `npm run build`, and this directory as the project root. Configure the environment variables in Vercel. Redeploy after setting the final production origin. `.vercelignore` excludes local reports, tests, scripts and source PDFs from CLI uploads. Do not move internal JSON files into `public/`; product data is server-only and the UI uses an English field allowlist. After deploying, verify the catalog, product image, model-prefilled Contact page and demo completion on the public URL.
+Alternatively import the project through Vercel and select the Next.js preset, Node 22, build command `npm run build`, and this directory as the project root. Configure the environment variables in Vercel. Redeploy after setting the final production origin. `.vercelignore` excludes local reports, tests, scripts and source PDFs from CLI uploads. Do not move internal JSON files into `public/`; product data is server-only and the UI uses an English field allowlist. After deploying, verify the catalog, product image, model-prefilled Contact page and a successful Formspree submission on the public URL.
 
 ## Static export / ZIP deployment
 
@@ -68,7 +68,7 @@ npm.cmd run build
 
 Deploy the **contents** of `out/` to a static host at the domain root. Keep `_next/`, `images/`, `products/` and `contact/` together with `index.html`. Directory-index hosting serves `/contact/` and every generated product route; do not flatten the folders or configure a catch-all SPA rewrite. Upload the ZIP to a host that supports ZIP extraction, or unzip it first. The ZIP contains deployment assets only, not private source JSON, source PDFs, node_modules, secrets or project tooling.
 
-Catalog filtering/search/pagination run in the browser against normalized English display data from the existing product JSON. Every browsable product detail route is generated at build time. RFQ query-model prefill is handled in the browser, and the form remains a clearly labeled non-transmitting demo. Rebuild after changing data or images. JavaScript is needed for filters and the demo form; individual product detail pages contain static HTML.
+Catalog filtering/search/pagination run in the browser against normalized English display data from the existing product JSON. Every browsable product detail route is generated at build time. RFQ query-model prefill is handled in the browser, and the form submits through Formspree after client-side validation. Rebuild after changing data, images or public environment variables. JavaScript is needed for filters and inline form validation; individual product detail pages contain static HTML.
 
 Do not open `index.html` via `file://`; use an HTTP static server. For a local exported-site preview, run `python -m http.server 4173 --directory out` and open `http://localhost:4173/`. Security headers must be configured by your static hosting provider because Next.js runtime headers cannot run in an export. If desired set `X-Content-Type-Options: nosniff`, `Referrer-Policy: strict-origin-when-cross-origin`, `X-Frame-Options: DENY` and `Permissions-Policy: camera=(), microphone=(), geolocation=()` there.
 
