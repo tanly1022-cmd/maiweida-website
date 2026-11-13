@@ -1,0 +1,14 @@
+# Local tooling, source catalogs, reports and evidence are not deployment inputs.
+node_modules/
+.next/
+work/
+*.tsbuildinfo
+.env*
+!.env.example
+catalog/
+*.pdf
+scripts/
+tests/
+*report.md
+*manifest.json
+AGENTS.md

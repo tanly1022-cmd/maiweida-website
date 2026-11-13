@@ -1,0 +1,12 @@
+﻿import type { ReactNode } from "react";
+import Link from "next/link";
+export function Arrow({ diagonal = false, className = "" }: { diagonal?: boolean; className?: string }) {
+  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={`size-5 shrink-0 ${className}`} aria-hidden="true">{diagonal ? <path d="M6 18 18 6M6 6h12v12" /> : <path d="M4 12h15m-6-6 6 6-6 6" />}</svg>;
+}
+export function Container({ children, className = "" }: { children: ReactNode; className?: string }) { return <div className={`shell ${className}`}>{children}</div>; }
+export function Eyebrow({ children, light = false }: { children: ReactNode; light?: boolean }) { return <p className={`eyebrow ${light ? "text-silver" : "text-muted"}`}><span className="inline-block h-1.5 w-1.5 bg-orange" aria-hidden="true" />{children}</p>; }
+export function PageIntro({ label, title, children }: { label: string; title: string; children: ReactNode }) {
+  return <section className="border-b border-line bg-paper"><Container className="py-14 md:py-20"><Eyebrow>{label}</Eyebrow><h1 className="mt-5 max-w-4xl text-4xl md:text-6xl">{title}</h1><div className="mt-6 max-w-2xl leading-7 text-muted">{children}</div></Container></section>;
+}
+export function QuoteCTA() { return <section className="bg-steel text-white"><Container className="flex flex-col justify-between gap-8 py-14 md:flex-row md:items-center md:py-18"><div><Eyebrow light>Start a technical conversation</Eyebrow><h2 className="mt-4 text-3xl md:text-4xl">A model. A drawing. A requirement.</h2><p className="mt-4 max-w-xl text-silver">Bring the details of your next machining task. Start with a specification-led enquiry.</p></div><Link href="/contact" className="button button-light shrink-0">Request a Quote <Arrow /></Link></Container></section>; }
+export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) { return <nav aria-label="Breadcrumb" className="py-7"><ol className="flex flex-wrap items-center gap-2 text-xs text-muted"><li><Link href="/" className="hover:underline">Home</Link></li>{items.map((item, index) => <li key={index} className="flex min-w-0 items-center gap-2"><span aria-hidden="true">/</span>{item.href ? <Link href={item.href} className="hover:underline">{item.label}</Link> : <span aria-current="page" className="break-anywhere text-steel">{item.label}</span>}</li>)}</ol></nav>; }

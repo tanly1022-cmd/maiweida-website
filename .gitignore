@@ -1,0 +1,17 @@
+﻿node_modules/
+.next/
+out/
+.env*
+!.env.example
+*.tsbuildinfo
+.vercel/
+
+# Generated static archives and internal extraction/mapping artifacts.
+*.zip
+*report.md
+*manifest.json
+category-mapping-manifest.json
+product-image-manifest.json
+
+# Previously generated static export folders.
+MAIWEIDA-static-site-*/

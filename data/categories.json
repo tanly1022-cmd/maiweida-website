@@ -1,0 +1,208 @@
+[
+  {
+    "id": "turning-tools",
+    "name": "Turning Tools",
+    "children": [
+      {
+        "id": "m-style-external-turning-toolholders",
+        "name": "M style external turning toolholders"
+      },
+      {
+        "id": "p-style-external-turning-toolholders",
+        "name": "P style external turning toolholders"
+      },
+      {
+        "id": "s-style-external-turning-toolholders",
+        "name": "S style external turning toolholders"
+      },
+      {
+        "id": "c-style-external-turning-toolholders",
+        "name": "C style external turning toolholders"
+      },
+      {
+        "id": "d-style-external-turning-toolholders",
+        "name": "D style external turning toolholders"
+      },
+      {
+        "id": "w-style-external-turning-toolholders",
+        "name": "W style external turning toolholders"
+      },
+      {
+        "id": "m-style-internal-turning-toolholders",
+        "name": "M style internal turning toolholders"
+      },
+      {
+        "id": "p-style-internal-turning-toolholders",
+        "name": "P style internal turning toolholders"
+      },
+      {
+        "id": "s-style-internal-turning-toolholders",
+        "name": "S style internal turning toolholders"
+      },
+      {
+        "id": "tungsten-anti-shaking-internal-turning-toolholders",
+        "name": "Tungsten Anti-shaking internal turning toolholders"
+      },
+      {
+        "id": "external-threading-toolholders",
+        "name": "External threading toolholders"
+      },
+      {
+        "id": "internal-threading-toolholders",
+        "name": "Internal threading toolholders"
+      },
+      {
+        "id": "external-parting-grooving-and-turning-toolholders",
+        "name": "External parting, grooving and turning toolholders"
+      },
+      {
+        "id": "other-turning-tools",
+        "name": "Other Turning Tools"
+      }
+    ]
+  },
+  {
+    "id": "milling-tools",
+    "name": "Milling Tools",
+    "children": [
+      {
+        "id": "face-milling-tools",
+        "name": "Face milling tools"
+      },
+      {
+        "id": "square-shoulder-milling-tools",
+        "name": "Square-shoulder milling tools"
+      },
+      {
+        "id": "profile-milling-tools",
+        "name": "Profile milling tools"
+      },
+      {
+        "id": "side-and-face-milling-tools",
+        "name": "Side and face milling tools"
+      },
+      {
+        "id": "chamfer-milling-tools",
+        "name": "Chamfer milling tools"
+      },
+      {
+        "id": "high-feed-milling-cutter",
+        "name": "High feed milling cutter"
+      },
+      {
+        "id": "helical-end-face-milling-tools",
+        "name": "Helical end face milling tools"
+      },
+      {
+        "id": "mould-milling-tools",
+        "name": "Mould milling tools"
+      },
+      {
+        "id": "solid-carbide-end-mills",
+        "name": "Solid carbide end mills"
+      },
+      {
+        "id": "other-milling-tools",
+        "name": "Other Milling Tools"
+      }
+    ]
+  },
+  {
+    "id": "boring-tools",
+    "name": "Boring Tools",
+    "children": [
+      {
+        "id": "micro-adjustable-cutter-holder",
+        "name": "Micro-adjustable Cutter Holder"
+      },
+      {
+        "id": "boring-unit",
+        "name": "Boring Unit"
+      },
+      {
+        "id": "other-boring-tools",
+        "name": "Other Boring Tools"
+      }
+    ]
+  },
+  {
+    "id": "drilling-tools",
+    "name": "Drilling Tools",
+    "children": [
+      {
+        "id": "indexable-drilling-tools",
+        "name": "Indexable drilling tools"
+      },
+      {
+        "id": "carbide-drill-bits",
+        "name": "Carbide drill bits"
+      },
+      {
+        "id": "other-drilling-tools",
+        "name": "Other Drilling Tools"
+      }
+    ]
+  },
+  {
+    "id": "cnc-inserts",
+    "name": "CNC Inserts",
+    "children": [
+      {
+        "id": "turning-inserts",
+        "name": "Turning inserts"
+      },
+      {
+        "id": "milling-inserts",
+        "name": "Milling inserts"
+      },
+      {
+        "id": "threading-inserts",
+        "name": "Threading inserts"
+      },
+      {
+        "id": "parting-and-grooving-inserts",
+        "name": "Parting and grooving inserts"
+      },
+      {
+        "id": "u-drill-inserts",
+        "name": "U drill inserts"
+      },
+      {
+        "id": "aluminum-insert",
+        "name": "Aluminum insert"
+      },
+      {
+        "id": "other-cnc-inserts",
+        "name": "Other CNC Inserts"
+      }
+    ]
+  },
+  {
+    "id": "tooling-systems",
+    "name": "Tooling Systems",
+    "children": [
+      {
+        "id": "arbors",
+        "name": "Arbors"
+      },
+      {
+        "id": "spare-parts",
+        "name": "Spare parts"
+      },
+      {
+        "id": "other-tooling-systems",
+        "name": "Other Tooling Systems"
+      }
+    ]
+  },
+  {
+    "id": "accessories",
+    "name": "Accessories",
+    "children": [
+      {
+        "id": "other-accessories",
+        "name": "Other Accessories"
+      }
+    ]
+  }
+]
