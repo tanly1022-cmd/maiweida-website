@@ -13,7 +13,7 @@ export function generateStaticParams() { return products.map(p => ({ id: p.id })
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params, product = getProduct(id);
   if (!product) return { title: "Product not found", robots: { index: false } };
-  return { title: product.model, description: product.description.slice(0, 170), alternates: { canonical: absoluteUrl(`/products/${product.id}`) }, openGraph: { title: `${product.model} | MAIWEIDA`, description: product.description.slice(0, 170), type: "website", ...(product.image && absoluteUrl(product.image) ? { images: [{ url: absoluteUrl(product.image)!, alt: `Catalog family photograph for ${product.model}` }] } : {}) } };
+  return { title: product.model, description: product.description.slice(0, 170), alternates: { canonical: absoluteUrl(`/products/${product.id}`) }, openGraph: { title: `${product.model} | MAIVIDA`, description: product.description.slice(0, 170), type: "website", ...(product.image && absoluteUrl(product.image) ? { images: [{ url: absoluteUrl(product.image)!, alt: `Catalog family photograph for ${product.model}` }] } : {}) } };
 }
 export default async function ProductDetail({ params }: Props) {
   const { id } = await params, product = getProduct(id);

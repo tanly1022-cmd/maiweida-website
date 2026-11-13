@@ -46,7 +46,7 @@ test("WhatsApp uses the real business number and rejects malformed overrides", (
 
 test("homepage has four qualified enquiry priorities without shipping guarantees", () => {
   const html = renderToStaticMarkup(createElement(TrustSection));
-  for (const label of ["Why Choose MAIWEIDA", "Fast Global Shipping", "Strict Quality Control", "Custom Tooling Solutions", "Engineering Support"]) assert.ok(html.includes(label));
+  for (const label of ["Why Choose MAIVIDA", "Fast Global Shipping", "Strict Quality Control", "Custom Tooling Solutions", "Engineering Support"]) assert.ok(html.includes(label));
   assert.equal((html.match(/<svg/g) ?? []).length, 4);
   assert.match(html, /must be confirmed/);
 });
@@ -54,7 +54,7 @@ test("homepage has four qualified enquiry priorities without shipping guarantees
 test("WhatsApp FAB is icon-only, accessible, circular and above hosting badges", () => {
   const html = renderToStaticMarkup(createElement(WhatsAppButton));
   assert.match(html, /href="https:\/\/wa\.me\/8618673309556"/);
-  assert.match(html, /aria-label="Contact MAIWEIDA on WhatsApp \(opens in a new tab\)"/);
+  assert.match(html, /aria-label="Contact MAIVIDA on WhatsApp \(opens in a new tab\)"/);
   assert.match(html, /target="_blank" rel="noopener noreferrer"/);
   assert.match(html, /<svg[^>]+aria-hidden="true"/);
   assert.equal(html.replace(/<[^>]*>/g, "").trim(), "");

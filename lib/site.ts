@@ -1,6 +1,6 @@
 ﻿export const site = {
-  name: "MAIWEIDA",
-  description: "Explore the MAIWEIDA model catalog and send a specification-led tooling enquiry. Share your workpiece, machine interface and machining requirements.",
+  name: "MAIVIDA",
+  description: "Explore the MAIVIDA model catalog and send a specification-led tooling enquiry. Share your workpiece, machine interface and machining requirements.",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "",
 };
 function getOrigin() {

@@ -6,7 +6,7 @@ export function WhatsAppButton() {
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    aria-label="Contact MAIWEIDA on WhatsApp (opens in a new tab)"
+    aria-label="Contact MAIVIDA on WhatsApp (opens in a new tab)"
     className="whatsapp-contact"
   >
     <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30" aria-hidden="true" focusable="false">

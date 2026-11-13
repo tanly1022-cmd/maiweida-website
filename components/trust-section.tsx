@@ -19,7 +19,7 @@ function PriorityIcon({ type }: { type: typeof priorities[number]["icon"] }) {
 export function TrustSection() {
   return <section className="section-space border-y border-line" aria-labelledby="trust-heading"><Container>
     <Eyebrow>Built around your requirements</Eyebrow>
-    <h2 id="trust-heading" className="mt-4 text-3xl md:text-4xl">Why Choose MAIWEIDA</h2>
+    <h2 id="trust-heading" className="mt-4 text-3xl md:text-4xl">Why Choose MAIVIDA</h2>
     <p className="mt-5 max-w-2xl text-sm leading-7 text-muted">Four priorities for your tooling enquiry. Shipping arrangements, inspection scope, custom tooling feasibility and technical support must be confirmed for the selected product.</p>
     <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">{priorities.map(item => <div key={item.icon} className="border-t border-line pt-6">
       <PriorityIcon type={item.icon} /><span className="mt-5 block h-0.5 w-6 bg-orange" aria-hidden="true" />

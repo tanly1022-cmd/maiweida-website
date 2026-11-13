@@ -6,7 +6,7 @@ import { absoluteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Product catalog",
-  description: "Search MAIWEIDA catalog models and filter by the available English product categories. Confirm specifications with a model-specific enquiry.",
+  description: "Search MAIVIDA catalog models and filter by the available English product categories. Confirm specifications with a model-specific enquiry.",
   alternates: { canonical: absoluteUrl("/products") },
 };
 

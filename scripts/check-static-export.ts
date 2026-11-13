@@ -39,7 +39,7 @@ for (const file of files.filter(file => file.endsWith(".html"))) {
   const whatsapp = (html.match(/<a\b[^>]*>[\s\S]*?<\/a>/g) ?? []).filter(tag => tag.includes('class="whatsapp-contact"'));
   assert.equal(whatsapp.length, 1, `Expected one shared WhatsApp FAB in ${page}`);
   assert.ok(whatsapp[0].includes('href="https://wa.me/8618673309556"'), `Wrong WhatsApp business number in ${page}`);
-  assert.match(whatsapp[0], /aria-label="Contact MAIWEIDA on WhatsApp/);
+  assert.match(whatsapp[0], /aria-label="Contact MAIVIDA on WhatsApp/);
   assert.ok(whatsapp[0].includes('<svg'), `WhatsApp icon missing in ${page}`);
   assert.equal(whatsapp[0].replace(/<[^>]*>/g, "").trim(), "", `WhatsApp FAB must have no visible text in ${page}`);
   assert.doesNotMatch(html, /YOUR_PHONE_NUMBER|Setup pending/, `Stale WhatsApp placeholder in ${page}`);
@@ -53,7 +53,7 @@ for (const product of products) {
 }
 for (const asset of ["/images/hero-tool.jpg", "/images/product-placeholder.svg", "/images/og-cover.png"]) checkAsset(asset, "index.html");
 const home = readFileSync(join(root, "index.html"), "utf8");
-assert.ok(home.includes("MAIWEIDA | Carbide Cutting Tools &amp; CNC Toolholding Supplier"), "Homepage SEO title missing");
+assert.ok(home.includes("MAIVIDA | Carbide Cutting Tools &amp; CNC Toolholding Supplier"), "Homepage SEO title missing");
 const hero = (home.match(/<img\b[^>]*>/g) ?? []).find(tag => tag.includes('src="/images/hero-tool.jpg"'));
 assert.ok(hero, "Homepage must contain a native img with the root-relative hero JPEG URL");
 assert.match(hero, /loading="eager"/);
