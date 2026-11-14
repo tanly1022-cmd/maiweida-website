@@ -105,7 +105,12 @@ export function groupProducts(products: Product[]): ProductGroup[] {
     groups.set(key, group);
     ordered.push(group);
   }
-  return ordered;
+  // Keep real product photographs first while preserving the source order within
+  // each group. Placeholder-only products are intentionally shown at the end.
+  return [
+    ...ordered.filter(group => Boolean(group.product.image)),
+    ...ordered.filter(group => !group.product.image),
+  ];
 }
 
 export function productTitle(product: Product) { return product.name ?? product.model; }
