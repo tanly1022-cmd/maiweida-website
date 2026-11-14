@@ -29,12 +29,8 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 .button-outline:hover { border-color: #2B2F36; background: #F5F6F7; }
 .button-light { background: white; color: #2B2F36; }
 .button-light:hover { background: #e8eaec; }
-.brand { display: inline-flex; align-items: center; color: #2B2F36; }
-.brand-logo { display: inline-flex; align-items: center; gap: .7rem; }
-.brand-logo-mark { display: block; width: 42px; height: 31px; flex: 0 0 auto; }
-.brand-logo-copy { display: flex; flex-direction: column; gap: .28rem; line-height: 1; }
-.brand-logo-wordmark { font-family: var(--font-display); font-size: 1.45rem; font-weight: 700; letter-spacing: .16em; }
-.brand-logo-tagline { font-family: var(--font-sans); font-size: 7px; font-weight: 600; letter-spacing: .2em; color: #59616B; white-space: nowrap; }
+.brand { display: inline-flex; align-items: center; color: #2B2F36; min-width: 0; }
+.brand-logo { display: block; width: min(400px, 100%); height: 48px; flex: 0 1 auto; }
 .nav-link { position: relative; color: #59616B; }
 .nav-link[aria-current="page"], .nav-link:hover { color: #2B2F36; }
 .nav-link[aria-current="page"]::after { position: absolute; content: ""; height: 2px; width: 18px; background: #E8621A; left: 0; bottom: 5px; }
@@ -65,7 +61,7 @@ details.faq summary::-webkit-details-marker { display: none; }
 details.faq summary::after { content: "+"; font-size: 22px; color: #59616B; font-weight: 400; }
 details.faq[open] summary::after { content: "−"; }
 .process-number { display: flex; width: 38px; height: 38px; align-items: center; justify-content: center; border: 1px solid #A8B0B8; font-size: 11px; color: #59616B; }
-@media (max-width: 639px) { .shell { width: calc(100% - 2rem); } .section-space { padding-block: 3.5rem; } .brand-logo-mark { width: 36px; height: 27px; } .brand-logo-wordmark { font-size: 1.15rem; letter-spacing: .13em; } .brand-logo-tagline { font-size: 6px; letter-spacing: .14em; } }
+@media (max-width: 639px) { .shell { width: calc(100% - 2rem); } .section-space { padding-block: 3.5rem; } .brand-logo { width: min(270px, 100%); height: 40px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
 
 /* Catalog navigation uses separate filter links and keyboard-operable toggles. */
