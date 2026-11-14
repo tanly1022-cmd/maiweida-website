@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Container, PageIntro, Arrow } from "./ui";
 import { ProductCard } from "./product-card";
 import { CategorySidebar } from "./category-sidebar";
+import { InsertsReference } from "./inserts-reference";
 import { englishValue, filterProducts, groupProducts, type PopulatedCategory, type Product } from "@/lib/catalog-core";
 
 type Props = { products: Product[]; categories: PopulatedCategory[] };
@@ -18,10 +19,16 @@ export function CatalogBrowser(props: Props) {
 
 export function CatalogView({ products, categories, params = new URLSearchParams() }: Props & { params?: Pick<URLSearchParams, "get"> }) {
   const query = englishValue(params.get("q"))?.slice(0, 120) ?? "";
-  const categoryParam = params.get("category") ?? "";
+  const rawCategoryParam = params.get("category") ?? "";
+  // Preserve the previous local preview links after renaming the insert taxonomy.
+  const legacyCategories: Record<string, string> = { Inserts: "CNC Inserts", inserts: "cnc-inserts", "Hole Machining Inserts": "CNC Inserts", "hole-machining-inserts": "cnc-inserts" };
+  const categoryParam = legacyCategories[rawCategoryParam] ?? rawCategoryParam;
   const available = categories.flatMap(parent => [parent, ...parent.children]);
-  const category = available.find(item => item.name === categoryParam || item.id === categoryParam)?.name ?? "";
+  const category = available.find(item => item.name.toLowerCase() === categoryParam.toLowerCase() || item.id === categoryParam)?.name ?? "";
   const results = filterProducts(products, query, category);
+  const insertCategory = categories.find(parent => parent.id === "cnc-inserts");
+  const showInsertReference = !category || category === insertCategory?.name || !!insertCategory?.children.some(child => child.name === category);
+  const categoryPending = available.some(item => item.name === category && item.count === 0);
   const resultGroups = groupProducts(results);
   const maxPage = Math.max(1, Math.ceil(resultGroups.length / PAGE_SIZE));
   const page = Math.min(maxPage, Math.max(1, Math.trunc(Number(params.get("page")) || 1)));
@@ -59,7 +66,7 @@ export function CatalogView({ products, categories, params = new URLSearchParams
             <option value="">All categories</option>
             {categories.map(parent => <optgroup key={parent.id} label={parent.name}>
               <option value={parent.name}>All {parent.name} ({parent.count})</option>
-              {parent.children.map(child => <option key={child.id} value={child.name}>{child.name} ({child.count})</option>)}
+              {parent.children.map(child => <option key={child.id} value={child.name}>{child.name} ({child.count ? child.count : "Catalog pending"})</option>)}
             </optgroup>)}
           </select>
         </div>
@@ -83,8 +90,8 @@ export function CatalogView({ products, categories, params = new URLSearchParams
           {shown.length ? <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {shown.map(group => <ProductCard key={group.key} product={group.product} variants={group.variants} />)}
           </div> : <div className="border border-line bg-paper px-7 py-14">
-            <h3 className="text-xl">No matching models.</h3>
-            <p className="mt-4 max-w-lg text-sm leading-7 text-muted">Try a different model code or category. Some category references do not yet have model-level entries. You can send your requirement without selecting a model.</p>
+            <h3 className="text-xl">{categoryPending ? "Catalog entries coming soon." : "No matching models."}</h3>
+            <p className="mt-4 max-w-lg text-sm leading-7 text-muted">{categoryPending ? "This category is part of our catalog structure, but model references have not been added yet. Send your specification so we can check the suitable options." : "Try a different model code or category. Some category references do not yet have model-level entries. You can send your requirement without selecting a model."}</p>
             <Link href="/contact" className="button button-dark mt-7">Enquire about a requirement <Arrow /></Link>
           </div>}
 
@@ -101,6 +108,7 @@ export function CatalogView({ products, categories, params = new URLSearchParams
           <p className="mt-8 border-t border-line pt-6 text-xs leading-6 text-muted">Reference data only. Confirm the complete configuration, dimensions and units before ordering. Missing material, coating and specification fields are not displayed.</p>
         </section>
       </div>
+      {showInsertReference && <div className="mt-12"><InsertsReference /></div>}
     </Container>
   </>;
 }

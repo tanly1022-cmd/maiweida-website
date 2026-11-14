@@ -1,0 +1,1618 @@
+{
+  "brands": [
+    "Sandvik",
+    "Kennametal",
+    "ISCAR",
+    "Mitsubishi",
+    "Tungaloy",
+    "Kyocera",
+    "Korloy",
+    "TaeguTec",
+    "Sumitomo"
+  ],
+  "comparisons": [
+    {
+      "operation": "Turning",
+      "sourcePage": 151,
+      "rows": [
+        {
+          "group": "P",
+          "grade": "JGA05A",
+          "references": [
+            null,
+            [
+              "KC5010"
+            ],
+            null,
+            null,
+            [
+              "AH710"
+            ],
+            [
+              "PR915"
+            ],
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGA10A",
+          "references": [
+            [
+              "GC1525",
+              "GC1025"
+            ],
+            [
+              "KU10T",
+              "KC5025"
+            ],
+            [
+              "IC250",
+              "IC507"
+            ],
+            [
+              "VP10MF"
+            ],
+            [
+              "AH710"
+            ],
+            [
+              "PR1005",
+              "PR915"
+            ],
+            [
+              "PC230"
+            ],
+            null,
+            null
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGA20F",
+          "references": [
+            [
+              "GC1020",
+              "GC1125"
+            ],
+            [
+              "KC7015",
+              "KC7020"
+            ],
+            [
+              "IC928",
+              "IC1008"
+            ],
+            [
+              "VP15TF"
+            ],
+            [
+              "GH330",
+              "GH730"
+            ],
+            [
+              "PR930",
+              "PR1025"
+            ],
+            [
+              "PC230"
+            ],
+            null,
+            null
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGP25T",
+          "references": [
+            [
+              "GC4225",
+              "GC4215"
+            ],
+            [
+              "KCP25",
+              "KC9125"
+            ],
+            [
+              "IC9250",
+              "IC9054"
+            ],
+            [
+              "UE6010",
+              "UE6020"
+            ],
+            [
+              "T9015",
+              "T9025"
+            ],
+            [
+              "CA5515",
+              "CA5025",
+              "CA9025"
+            ],
+            [
+              "NC3020"
+            ],
+            [
+              "TT1500"
+            ],
+            [
+              "AC2000",
+              "AC3000"
+            ]
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGP25S",
+          "references": [
+            [
+              "GC4225",
+              "GC4235"
+            ],
+            [
+              "KCP30",
+              "KCP40"
+            ],
+            [
+              "IC8350",
+              "IC9350"
+            ],
+            [
+              "UH6400",
+              "UE6035"
+            ],
+            [
+              "T9025",
+              "T9035"
+            ],
+            [
+              "CA5525",
+              "CA5535"
+            ],
+            [
+              "NC330"
+            ],
+            [
+              "TT3500",
+              "TT5100"
+            ],
+            [
+              "AC830P",
+              "AC3000"
+            ]
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGP40T",
+          "references": [
+            [
+              "GC4235",
+              "GC4035"
+            ],
+            [
+              "KC9140",
+              "KC9040"
+            ],
+            [
+              "IC9350",
+              "IC656"
+            ],
+            [
+              "UH6400",
+              "US735"
+            ],
+            [
+              "T9005"
+            ],
+            [
+              "CA5535"
+            ],
+            null,
+            [
+              "TT450"
+            ],
+            [
+              "AC630M"
+            ]
+          ]
+        },
+        {
+          "group": "M",
+          "grade": "JGA10A",
+          "references": [
+            [
+              "GC1025"
+            ],
+            [
+              "KC5010",
+              "KC5510"
+            ],
+            [
+              "IC507",
+              "IC907"
+            ],
+            [
+              "VP10MF"
+            ],
+            [
+              "GH330"
+            ],
+            [
+              "PR915",
+              "PR1225"
+            ],
+            [
+              "PC9030"
+            ],
+            null,
+            [
+              "AC510N"
+            ]
+          ]
+        },
+        {
+          "group": "M",
+          "grade": "JGA20F",
+          "references": [
+            [
+              "GC1020"
+            ],
+            [
+              "KC5025",
+              "KC7375"
+            ],
+            [
+              "IC250",
+              "IC354"
+            ],
+            [
+              "VP15TF"
+            ],
+            [
+              "GH770"
+            ],
+            [
+              "PR930",
+              "PR1125"
+            ],
+            [
+              "PC9030"
+            ],
+            null,
+            [
+              "AC520U",
+              "AC530U"
+            ]
+          ]
+        },
+        {
+          "group": "M",
+          "grade": "JGM30R",
+          "references": [
+            [
+              "GC2135",
+              "GC235"
+            ],
+            [
+              "KCM25",
+              "KC9240"
+            ],
+            [
+              "IC656",
+              "IC9025"
+            ],
+            [
+              "US735"
+            ],
+            [
+              "T6030"
+            ],
+            [
+              "CA6525"
+            ],
+            null,
+            null,
+            [
+              "AC630M"
+            ]
+          ]
+        },
+        {
+          "group": "K",
+          "grade": "JGK10R",
+          "references": [
+            [
+              "GC3205",
+              "GC3215"
+            ],
+            [
+              "KCK05",
+              "KCK15"
+            ],
+            [
+              "IC9150",
+              "IC9015",
+              "IC418"
+            ],
+            [
+              "UC5105",
+              "UC5115"
+            ],
+            [
+              "T5010"
+            ],
+            [
+              "CA4010",
+              "CA4515"
+            ],
+            [
+              "N305K"
+            ],
+            [
+              "TT1300"
+            ],
+            [
+              "AC410K",
+              "AC700G"
+            ]
+          ]
+        },
+        {
+          "group": "K",
+          "grade": "JGK20R",
+          "references": [
+            [
+              "GC3215"
+            ],
+            [
+              "KCK20",
+              "KC9315"
+            ],
+            [
+              "IC4010"
+            ],
+            [
+              "UE6110",
+              "UC5115"
+            ],
+            [
+              "T5020"
+            ],
+            [
+              "CA4010",
+              "CA4115"
+            ],
+            [
+              "N315K"
+            ],
+            [
+              "TT1500"
+            ],
+            [
+              "AC700G"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "operation": "Milling",
+      "sourcePage": 152,
+      "rows": [
+        {
+          "group": "P",
+          "grade": "JGA05A",
+          "references": [
+            [
+              "GC1010"
+            ],
+            null,
+            [
+              "IC250"
+            ],
+            null,
+            null,
+            null,
+            null,
+            null,
+            [
+              "ACP100"
+            ]
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGA10A",
+          "references": [
+            [
+              "GC1025"
+            ],
+            [
+              "KC715M"
+            ],
+            [
+              "IC903",
+              "IC950"
+            ],
+            [
+              "VP15TF"
+            ],
+            null,
+            [
+              "PR730",
+              "PR830",
+              "PR1025"
+            ],
+            [
+              "PC230"
+            ],
+            [
+              "TT7030"
+            ],
+            [
+              "ACZ310",
+              "ACP100"
+            ]
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGA20H",
+          "references": [
+            [
+              "GC1025"
+            ],
+            [
+              "KC522M"
+            ],
+            [
+              "IC950",
+              "IC900"
+            ],
+            [
+              "VP15TF"
+            ],
+            null,
+            [
+              "PR630",
+              "PR1225"
+            ],
+            [
+              "PC3530"
+            ],
+            [
+              "TT7070",
+              "TT9030"
+            ],
+            [
+              "ACZ330",
+              "ACP200"
+            ]
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGA20F",
+          "references": [
+            [
+              "GC1010",
+              "GC2030"
+            ],
+            [
+              "KC525M"
+            ],
+            [
+              "IC908",
+              "IC910"
+            ],
+            [
+              "VP15TF",
+              "VP30RT"
+            ],
+            [
+              "GH330",
+              "AH330"
+            ],
+            [
+              "PR660",
+              "PR830"
+            ],
+            [
+              "PC130"
+            ],
+            [
+              "TT8020"
+            ],
+            [
+              "ACZ300",
+              "ACZ350"
+            ]
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGP25T",
+          "references": [
+            [
+              "GC4230"
+            ],
+            [
+              "TN7525"
+            ],
+            [
+              "IC520M"
+            ],
+            [
+              "FH7030"
+            ],
+            null,
+            null,
+            null,
+            null,
+            [
+              "AC230"
+            ]
+          ]
+        },
+        {
+          "group": "P",
+          "grade": "JGP25S",
+          "references": [
+            [
+              "GC4240",
+              "GC4040"
+            ],
+            [
+              "TN7535",
+              "KC935M"
+            ],
+            [
+              "IC4050"
+            ],
+            [
+              "FH7020",
+              "FH7030"
+            ],
+            [
+              "T3030"
+            ],
+            null,
+            [
+              "NCM335"
+            ],
+            [
+              "TT7300"
+            ],
+            [
+              "AC230"
+            ]
+          ]
+        },
+        {
+          "group": "M",
+          "grade": "JGA10A",
+          "references": [
+            [
+              "GC1025",
+              "GC2030"
+            ],
+            [
+              "KC715M",
+              "KC730"
+            ],
+            [
+              "IC903"
+            ],
+            [
+              "VP15TF",
+              "FH7030",
+              "VP20RT"
+            ],
+            [
+              "GH330"
+            ],
+            [
+              "PR630",
+              "PR660",
+              "PR730"
+            ],
+            null,
+            null,
+            [
+              "ACP200"
+            ]
+          ]
+        },
+        {
+          "group": "M",
+          "grade": "JGA05A",
+          "references": [
+            [
+              "GC1030"
+            ],
+            [
+              "KC522M"
+            ],
+            [
+              "IC900",
+              "IC928"
+            ],
+            [
+              "VP15TF"
+            ],
+            [
+              "AH120"
+            ],
+            [
+              "PR830",
+              "PR1225"
+            ],
+            null,
+            null,
+            [
+              "ACZ310",
+              "EH20Z",
+              "ACP300"
+            ]
+          ]
+        },
+        {
+          "group": "M",
+          "grade": "JGM30R",
+          "references": [
+            null,
+            [
+              "TN7525"
+            ],
+            [
+              "IC4050"
+            ],
+            [
+              "FH7030"
+            ],
+            null,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "group": "K",
+          "grade": "JGK10R",
+          "references": [
+            [
+              "GC3220",
+              "K20D"
+            ],
+            [
+              "TN5515",
+              "TN5520"
+            ],
+            [
+              "IC9080",
+              "IC4100"
+            ],
+            [
+              "MC5020",
+              "F5010"
+            ],
+            [
+              "T1015"
+            ],
+            [
+              "IC9080",
+              "IC4100"
+            ],
+            [
+              "NCM310"
+            ],
+            null,
+            [
+              "ACK200",
+              "AC211"
+            ]
+          ]
+        },
+        {
+          "group": "K",
+          "grade": "JGK20R",
+          "references": [
+            [
+              "GC3040"
+            ],
+            [
+              "KC915M",
+              "KC930M"
+            ],
+            [
+              "IC520M",
+              "IC5100"
+            ],
+            [
+              "MC5020",
+              "F5020"
+            ],
+            [
+              "T1015"
+            ],
+            null,
+            [
+              "NCM320"
+            ],
+            null,
+            [
+              "ACK200"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "hardness": {
+    "sourcePage": 153,
+    "sourceStandardLabel": "GB1172-74 (as printed in the catalog; not a claim of current compliance)",
+    "rows": [
+      {
+        "hrc": 70.0,
+        "hra": 86.6,
+        "hv": 1037,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 69.5,
+        "hra": 86.3,
+        "hv": 1017,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 69.0,
+        "hra": 86.1,
+        "hv": 997,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 68.5,
+        "hra": 85.8,
+        "hv": 978,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 68.0,
+        "hra": 85.5,
+        "hv": 959,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 67.5,
+        "hra": 85.2,
+        "hv": 941,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 67.0,
+        "hra": 85.0,
+        "hv": 923,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 66.5,
+        "hra": 84.7,
+        "hv": 906,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 66.0,
+        "hra": 84.4,
+        "hv": 889,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 65.5,
+        "hra": 84.1,
+        "hv": 872,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 65.0,
+        "hra": 83.9,
+        "hv": 856,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 64.5,
+        "hra": 83.6,
+        "hv": 840,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 64.0,
+        "hra": 83.3,
+        "hv": 825,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 63.5,
+        "hra": 83.1,
+        "hv": 810,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 63.0,
+        "hra": 82.8,
+        "hv": 795,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 62.5,
+        "hra": 82.5,
+        "hv": 780,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 62.0,
+        "hra": 82.2,
+        "hv": 766,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 61.5,
+        "hra": 82.0,
+        "hv": 752,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 61.0,
+        "hra": 81.7,
+        "hv": 739,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 60.5,
+        "hra": 81.4,
+        "hv": 726,
+        "hb": null,
+        "tensile": null,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 60.0,
+        "hra": 81.2,
+        "hv": 713,
+        "hb": null,
+        "tensile": 2555,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 59.5,
+        "hra": 80.9,
+        "hv": 700,
+        "hb": null,
+        "tensile": 2500,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 59.0,
+        "hra": 80.6,
+        "hv": 688,
+        "hb": null,
+        "tensile": 2450,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 58.5,
+        "hra": 80.3,
+        "hv": 676,
+        "hb": null,
+        "tensile": 2395,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 58.0,
+        "hra": 80.1,
+        "hv": 664,
+        "hb": null,
+        "tensile": 2345,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 57.5,
+        "hra": 79.8,
+        "hv": 653,
+        "hb": null,
+        "tensile": 2295,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 57.0,
+        "hra": 79.5,
+        "hv": 642,
+        "hb": null,
+        "tensile": 2250,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 56.5,
+        "hra": 79.3,
+        "hv": 631,
+        "hb": null,
+        "tensile": 2205,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 56.0,
+        "hra": 79.0,
+        "hv": 620,
+        "hb": null,
+        "tensile": 2160,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 55.5,
+        "hra": 78.7,
+        "hv": 609,
+        "hb": null,
+        "tensile": 2115,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 55.0,
+        "hra": 78.5,
+        "hv": 599,
+        "hb": null,
+        "tensile": 2075,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 54.5,
+        "hra": 78.2,
+        "hv": 589,
+        "hb": null,
+        "tensile": 2035,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 54.0,
+        "hra": 77.9,
+        "hv": 579,
+        "hb": null,
+        "tensile": 1995,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 53.5,
+        "hra": 77.7,
+        "hv": 570,
+        "hb": null,
+        "tensile": 1955,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 53.0,
+        "hra": 77.4,
+        "hv": 561,
+        "hb": null,
+        "tensile": 1920,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 52.5,
+        "hra": 77.1,
+        "hv": 551,
+        "hb": null,
+        "tensile": 1885,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 52.0,
+        "hra": 76.9,
+        "hv": 543,
+        "hb": null,
+        "tensile": 1850,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 51.5,
+        "hra": 76.9,
+        "hv": 534,
+        "hb": null,
+        "tensile": 1815,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 51.0,
+        "hra": 76.3,
+        "hv": 525,
+        "hb": 501,
+        "tensile": 1780,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 50.5,
+        "hra": 76.1,
+        "hv": 517,
+        "hb": 494,
+        "tensile": 1750,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 50.0,
+        "hra": 75.8,
+        "hv": 509,
+        "hb": 488,
+        "tensile": 1720,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 49.5,
+        "hra": 75.5,
+        "hv": 501,
+        "hb": 481,
+        "tensile": 1690,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 49.0,
+        "hra": 75.3,
+        "hv": 493,
+        "hb": 474,
+        "tensile": 1660,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 48.5,
+        "hra": 75.0,
+        "hv": 485,
+        "hb": 468,
+        "tensile": 1630,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 48.0,
+        "hra": 74.7,
+        "hv": 478,
+        "hb": 461,
+        "tensile": 1605,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 47.5,
+        "hra": 74.5,
+        "hv": 470,
+        "hb": 455,
+        "tensile": 1575,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 47.0,
+        "hra": 74.2,
+        "hv": 463,
+        "hb": 449,
+        "tensile": 1550,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 46.5,
+        "hra": 73.9,
+        "hv": 456,
+        "hb": 442,
+        "tensile": 1525,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 46.0,
+        "hra": 73.7,
+        "hv": 449,
+        "hb": 436,
+        "tensile": 1500,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 45.5,
+        "hra": 73.4,
+        "hv": 443,
+        "hb": 430,
+        "tensile": 1475,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 45.0,
+        "hra": 73.2,
+        "hv": 436,
+        "hb": 424,
+        "tensile": 1450,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 44.5,
+        "hra": 72.9,
+        "hv": 429,
+        "hb": 418,
+        "tensile": 1430,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 44.0,
+        "hra": 72.6,
+        "hv": 423,
+        "hb": 413,
+        "tensile": 1405,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 43.5,
+        "hra": 72.4,
+        "hv": 417,
+        "hb": 407,
+        "tensile": 1385,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 43.0,
+        "hra": 72.1,
+        "hv": 411,
+        "hb": 401,
+        "tensile": 1360,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 42.5,
+        "hra": 71.8,
+        "hv": 405,
+        "hb": 396,
+        "tensile": 1340,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 42.0,
+        "hra": 71.6,
+        "hv": 399,
+        "hb": 391,
+        "tensile": 1320,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 41.5,
+        "hra": 71.3,
+        "hv": 393,
+        "hb": 385,
+        "tensile": 1300,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 41.0,
+        "hra": 71.1,
+        "hv": 388,
+        "hb": 380,
+        "tensile": 1280,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 40.5,
+        "hra": 70.8,
+        "hv": 382,
+        "hb": 375,
+        "tensile": 1260,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 40.0,
+        "hra": 70.5,
+        "hv": 377,
+        "hb": 370,
+        "tensile": 1245,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 39.5,
+        "hra": 70.3,
+        "hv": 372,
+        "hb": 365,
+        "tensile": 1225,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 39.0,
+        "hra": 70.0,
+        "hv": 367,
+        "hb": 360,
+        "tensile": 1210,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 38.5,
+        "hra": null,
+        "hv": 362,
+        "hb": 355,
+        "tensile": 1190,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 38.0,
+        "hra": null,
+        "hv": 357,
+        "hb": 350,
+        "tensile": 1175,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 37.5,
+        "hra": null,
+        "hv": 352,
+        "hb": 345,
+        "tensile": 1160,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 37.0,
+        "hra": null,
+        "hv": 347,
+        "hb": 341,
+        "tensile": 1140,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 36.5,
+        "hra": null,
+        "hv": 342,
+        "hb": 336,
+        "tensile": 1125,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 36.0,
+        "hra": null,
+        "hv": 338,
+        "hb": 332,
+        "tensile": 1110,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 35.5,
+        "hra": null,
+        "hv": 333,
+        "hb": 327,
+        "tensile": 1095,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 35.0,
+        "hra": null,
+        "hv": 329,
+        "hb": 323,
+        "tensile": 1080,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 34.5,
+        "hra": null,
+        "hv": 324,
+        "hb": 318,
+        "tensile": 1065,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 34.0,
+        "hra": null,
+        "hv": 320,
+        "hb": 314,
+        "tensile": 1050,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 33.5,
+        "hra": null,
+        "hv": 316,
+        "hb": 310,
+        "tensile": 1035,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 33.0,
+        "hra": null,
+        "hv": 312,
+        "hb": 306,
+        "tensile": 1020,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 32.5,
+        "hra": null,
+        "hv": 308,
+        "hb": 302,
+        "tensile": 1010,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 32.0,
+        "hra": null,
+        "hv": 304,
+        "hb": 298,
+        "tensile": 298,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 31.5,
+        "hra": null,
+        "hv": 300,
+        "hb": 294,
+        "tensile": 294,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 31.0,
+        "hra": null,
+        "hv": 296,
+        "hb": 291,
+        "tensile": 291,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 30.5,
+        "hra": null,
+        "hv": 292,
+        "hb": 287,
+        "tensile": 287,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 30.0,
+        "hra": null,
+        "hv": 289,
+        "hb": 283,
+        "tensile": 283,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 29.5,
+        "hra": null,
+        "hv": 285,
+        "hb": 280,
+        "tensile": 280,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 29.0,
+        "hra": null,
+        "hv": 281,
+        "hb": 276,
+        "tensile": 276,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 28.5,
+        "hra": null,
+        "hv": 278,
+        "hb": 273,
+        "tensile": 273,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 28.0,
+        "hra": null,
+        "hv": 274,
+        "hb": 269,
+        "tensile": 269,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 27.5,
+        "hra": null,
+        "hv": 271,
+        "hb": 266,
+        "tensile": 266,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 27.0,
+        "hra": null,
+        "hv": 268,
+        "hb": 263,
+        "tensile": 263,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 26.5,
+        "hra": null,
+        "hv": 264,
+        "hb": 260,
+        "tensile": 260,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 26.0,
+        "hra": null,
+        "hv": 261,
+        "hb": 257,
+        "tensile": 257,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 25.5,
+        "hra": null,
+        "hv": 258,
+        "hb": 254,
+        "tensile": 254,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 25.0,
+        "hra": null,
+        "hv": 255,
+        "hb": 251,
+        "tensile": 251,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 24.5,
+        "hra": null,
+        "hv": 252,
+        "hb": 248,
+        "tensile": 248,
+        "requiresVerification": true
+      },
+      {
+        "hrc": 24.0,
+        "hra": null,
+        "hv": 249,
+        "hb": 245,
+        "tensile": 820,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 23.5,
+        "hra": null,
+        "hv": 246,
+        "hb": 242,
+        "tensile": 810,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 23.0,
+        "hra": null,
+        "hv": 243,
+        "hb": 240,
+        "tensile": 800,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 22.5,
+        "hra": null,
+        "hv": 240,
+        "hb": 237,
+        "tensile": 790,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 22.0,
+        "hra": null,
+        "hv": 237,
+        "hb": 234,
+        "tensile": 785,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 21.5,
+        "hra": null,
+        "hv": 234,
+        "hb": 232,
+        "tensile": 775,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 21.0,
+        "hra": null,
+        "hv": 231,
+        "hb": 229,
+        "tensile": 765,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 20.5,
+        "hra": null,
+        "hv": 229,
+        "hb": 227,
+        "tensile": 760,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 20.0,
+        "hra": null,
+        "hv": 226,
+        "hb": 225,
+        "tensile": 750,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 19.5,
+        "hra": null,
+        "hv": 223,
+        "hb": 222,
+        "tensile": 745,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 19.0,
+        "hra": null,
+        "hv": 221,
+        "hb": 220,
+        "tensile": 735,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 18.5,
+        "hra": null,
+        "hv": 218,
+        "hb": 218,
+        "tensile": 730,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 18.0,
+        "hra": null,
+        "hv": 216,
+        "hb": 216,
+        "tensile": 725,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 17.5,
+        "hra": null,
+        "hv": 214,
+        "hb": 214,
+        "tensile": 715,
+        "requiresVerification": false
+      },
+      {
+        "hrc": 17.0,
+        "hra": null,
+        "hv": 211,
+        "hb": 211,
+        "tensile": 710,
+        "requiresVerification": false
+      }
+    ]
+  }
+}

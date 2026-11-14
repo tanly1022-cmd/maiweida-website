@@ -9,6 +9,7 @@ import { CategorySidebar } from "../components/category-sidebar";
 const read = (file: string) => JSON.parse(readFileSync(file, "utf8"));
 const source = read("data/products.json");
 const manifest = read("category-mapping-manifest.json");
+const insertSource = source.filter((row: { id: string }) => row.id.startsWith("mwd-insert-"));
 const categories = normalizeCategories(read("data/categories.json"));
 const products = normalizeCatalog(source, categories);
 const navigation = populatedCategories(categories, products);
@@ -28,12 +29,14 @@ function pythonJson(value: unknown): string {
   return JSON.stringify(value).replace(/[\u007f-\uffff]/g, c => `\\u${c.charCodeAt(0).toString(16).padStart(4, "0")}`);
 }
 test("every source record has one valid child and every non-category field is preserved", () => {
-  assert.equal(source.length, 1326);
-  assert.equal(manifest.assignments.length, source.length);
+  assert.equal(source.length, 1863);
+  assert.equal(insertSource.length, 537);
+  assert.equal(manifest.assignments.length, source.length - insertSource.length);
   for (const row of source) {
     const parent = categories.find(p => p.name === row.category_parent_en);
     assert.ok(parent);
     assert.ok(parent.children.some(c => c.name === row.category_en && c.id === row.category_id));
+    if (row.id.startsWith("mwd-insert-")) continue; // New insert references are not part of the original toolholder extraction.
     const assignment = manifest.assignments.find((a: {id: string}) => a.id === row.id);
     assert.ok(assignment?.preserved_fields_sha256);
     const retained = Object.fromEntries(Object.entries(row).filter(([key]) => !["category_en", "category_parent_en", "category_id"].includes(key)));
@@ -54,27 +57,53 @@ test("duplicate prefixes are disambiguated by saved catalog section rather than 
   assert.equal(products.find(p => p.model === "MCLNR/L" && p.categoryParent === "Turning Tools" && p.id.startsWith("mwd-p031"))?.category, "M style internal turning toolholders");
   assert.equal(products.find(p => p.id === "mwd-p012-family-02")?.category, "P style external turning toolholders");
 });
-test("parent and child filters partition the visible catalog, with no empty navigation nodes", () => {
+test("parent and child filters partition the catalog, retaining only explicitly pending empty categories", () => {
   assert.equal(navigation.reduce((sum, p) => sum + p.count, 0), products.length);
-  assert.ok(!navigation.some(p => p.name === "CNC Inserts"));
+  assert.equal(navigation.find(p => p.name === "CNC Inserts")?.count, 537);
   for (const parent of navigation) {
-    assert.ok(parent.count > 0);
+    assert.ok(parent.count > 0 || parent.showWhenEmpty);
     assert.equal(parent.count, filterProducts(products, "", parent.name).length);
     assert.equal(parent.count, filterProducts(products, "", parent.id).length);
     for (const child of parent.children) {
-      assert.ok(child.count > 0);
+      assert.ok(child.count > 0 || child.showWhenEmpty);
       assert.equal(child.count, filterProducts(products, "", child.name).length);
     }
   }
   assert.ok(filterProducts(products, "PCBNR/L", "Turning Tools").length > 0);
   assert.equal(filterProducts(products, "PCBNR/L", "Milling Tools").length, 0);
 });
-test("sidebar is collapsed by default, hides zero branches, preserves search, and resets page", () => {
+test("sidebar is collapsed without a selection, preserves search, and resets page", () => {
   const html = renderToStaticMarkup(createElement(CategorySidebar, {categories: navigation, selected: "", query: "MCLNR/L", total: products.length}));
-  assert.equal((html.match(/aria-expanded="false"/g) ?? []).length, navigation.length);
+  assert.equal((html.match(/aria-expanded="false"/g) ?? []).length, navigation.filter(p => p.children.length > 0).length);
   assert.doesNotMatch(html, /aria-expanded="true"/);
-  assert.equal((html.match(/hidden=""/g) ?? []).length, navigation.length);
-  assert.doesNotMatch(html, /CNC Inserts|Solid carbide end mills|Carbide drill bits/);
+  assert.equal((html.match(/hidden=""/g) ?? []).length, navigation.filter(p => p.children.length > 0).length);
+  assert.doesNotMatch(html, /Solid carbide end mills|Carbide drill bits/);
   assert.match(html, /q=MCLNR%2FL/);
   assert.doesNotMatch(html, /page=/);
+});
+
+test("CNC insert taxonomy follows the reference without duplicate or fabricated models", () => {
+  const parent = navigation.find(p => p.id === "cnc-inserts");
+  assert.ok(parent);
+  assert.deepEqual(parent.children.map(c => c.name), ["Turning inserts", "Milling inserts", "Threading inserts", "Parting and grooving inserts", "U drill inserts", "Aluminum inserts", "Deep-hole drilling inserts"]);
+  assert.deepEqual(parent.children.map(c => c.count), [315, 88, 29, 13, 16, 27, 49]);
+  assert.equal(new Set(parent.children.map(c => c.name)).size, parent.children.length);
+  assert.ok(filterProducts(products, "WCMX", "U drill inserts").length > 0);
+  assert.equal(filterProducts(products, "TPMT", "U drill inserts").length, 0);
+  assert.equal(filterProducts(products, "TPMT", "Deep-hole drilling inserts").length, 4);
+  assert.equal(filterProducts(products, "JGP25T", "CNC Inserts").length > 0, true);
+});
+
+test("selected insert family expands automatically without showing empty pending categories", () => {
+  const html = renderToStaticMarkup(createElement(CategorySidebar, {categories: navigation, selected: "Turning inserts", query: "CNMG", total: products.length}));
+  assert.match(html, /aria-label="Collapse CNC Inserts" aria-expanded="true"/);
+  assert.match(html, /aria-current="page"[^>]*>.*?Turning inserts/);
+  assert.doesNotMatch(html, /Catalog pending|Boring Tools/);
+  assert.match(html, /q=CNMG/);
+});
+
+test("only populated parent categories are visible and empty boring tools stay hidden", () => {
+  assert.deepEqual(navigation.map(p => p.name), ["Turning Tools", "Milling Tools", "Drilling Tools", "CNC Inserts", "Tooling Systems"]);
+  assert.equal(navigation.find(p => p.id === "boring-tools"), undefined);
+  assert.ok(categories.some(p => p.id === "boring-tools"));
 });

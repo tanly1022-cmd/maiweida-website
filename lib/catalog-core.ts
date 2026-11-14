@@ -1,11 +1,12 @@
-export type CategoryChild = { id: string; name: string };
+export type CategoryChild = { id: string; name: string; showWhenEmpty?: boolean };
 export type Category = CategoryChild & { children: CategoryChild[] };
 export type PopulatedCategory = CategoryChild & { count: number; children: (CategoryChild & { count: number })[] };
 export type Spec = { label: string; value: string; unit?: string };
+export type GradeRecommendation = { grade: string; recommendation: "main" | "general" | "available" };
 export type Product = {
   id: string; model: string; name?: string; category?: string; categoryParent?: string; categoryId?: string; categoryParentId?: string; description: string;
-  material?: string; coating?: string; application?: string; specs: Spec[];
-  image?: string; pdf?: string; needsReview: boolean; isFamilyReference: boolean;
+  material?: string; coating?: string; application?: string; specs: Spec[]; grades?: string[];
+  image?: string; pdf?: string; insertFamily?: string; insertSeries?: string; drawing?: string; sourcePage?: number; gradeRecommendations?: GradeRecommendation[]; needsReview: boolean; isFamilyReference: boolean;
 };
 export const DESCRIPTION_FALLBACK = "Specifications available upon request.";
 const cjk = /[\u2e80-\u2fff\u3000-\u303f\u3040-\u30ff\u3100-\u312f\u3400-\u9fff\uf900-\ufaff\u{20000}-\u{323af}]/u;
@@ -27,7 +28,7 @@ export function normalizeCategories(raw: unknown): Category[] {
   function node(value: unknown): CategoryChild {
     const row = record(value), id = englishValue(row.id), name = englishValue(row.name);
     if (!id || !/^[a-z0-9-]+$/.test(id) || !name || ids.has(id) || names.has(name)) throw new Error("Invalid or duplicate category.");
-    ids.add(id); names.add(name); return { id, name };
+    ids.add(id); names.add(name); return { id, name, ...(record(value).showWhenEmpty === true ? { showWhenEmpty: true } : {}) };
   }
   return raw.map(value => {
     const parent = node(value), children = record(value).children;
@@ -37,9 +38,9 @@ export function normalizeCategories(raw: unknown): Category[] {
 }
 export function populatedCategories(categories: Category[], products: Product[]): PopulatedCategory[] {
   return categories.map(parent => {
-    const children = parent.children.map(child => ({ ...child, count: products.filter(p => p.categoryId === child.id).length })).filter(child => child.count > 0);
+    const children = parent.children.map(child => ({ ...child, count: products.filter(p => p.categoryId === child.id).length })).filter(child => child.count > 0 || child.showWhenEmpty);
     return { ...parent, children, count: children.reduce((sum, child) => sum + child.count, 0) };
-  }).filter(parent => parent.count > 0);
+  }).filter(parent => parent.count > 0 || parent.showWhenEmpty);
 }
 export function normalizeCatalog(raw: unknown, categories: Category[]): Product[] {
   if (!Array.isArray(raw)) throw new Error("products.json must contain an array.");
@@ -62,26 +63,35 @@ export function normalizeCatalog(raw: unknown, categories: Category[]): Product[
       const spec = record(item), label = englishValue(spec.label_en), value = englishValue(spec.value);
       return label && value ? [{ label, value, ...(englishValue(spec.unit) ? { unit: englishValue(spec.unit) } : {}) }] : [];
     }) : [];
+    const grades = Array.isArray(row.grades) ? [...new Set(row.grades.flatMap(value => { const grade = englishValue(value); return grade ? [grade] : []; }))] : [];
     // Explicit allowlist. Never spread source objects or their bilingual reference fields.
     return [{ id, model, name: englishValue(row.name_en),
       category: child?.name, categoryId: child?.id, categoryParent: parent?.name, categoryParentId: parent?.id,
       description: englishValue(row.description_en) ?? DESCRIPTION_FALLBACK,
       material: englishValue(row.material), coating: englishValue(row.coating),
-      application: englishValue(row.application_en), specs,
+      application: englishValue(row.application_en), specs, grades,
       image: realImage, pdf: localAsset(row.pdf, "pdf"),
+      insertFamily: englishValue(row.insert_family), insertSeries: englishValue(row.insert_series),
+      drawing: localAsset(row.drawing, "image"),
+      sourcePage: Number.isInteger(row.source_printed_page) && Number(row.source_printed_page) > 0 ? Number(row.source_printed_page) : undefined,
+      gradeRecommendations: Array.isArray(row.grade_recommendations) ? row.grade_recommendations.flatMap((entry): GradeRecommendation[] => {
+        const item = record(entry), grade = englishValue(item.grade), recommendation = item.recommendation;
+        return grade && grades.includes(grade) && (recommendation === "main" || recommendation === "general" || recommendation === "available") ? [{ grade, recommendation }] : [];
+      }) : [],
       needsReview: row.status === "needs_manual_review" || isFamilyReference, isFamilyReference }];
   });
 }
 export function filterProducts(products: Product[], query: string, category: string) {
   const words = query.toLocaleLowerCase("en").trim().split(/\s+/).filter(Boolean);
   return products.filter(p => (!category || p.category === category || p.categoryParent === category || p.categoryId === category || p.categoryParentId === category) && words.every(word =>
-    [p.model, p.name, p.categoryParent, p.category, p.material, p.coating, p.application].filter(Boolean).join(" ").toLocaleLowerCase("en").includes(word)));
+    [p.model, p.name, p.categoryParent, p.category, p.material, p.coating, p.application, ...(p.grades ?? [])].filter(Boolean).join(" ").toLocaleLowerCase("en").includes(word)));
 }
 export type ProductGroup = { key: string; product: Product; variants: Product[] };
 
 function productGroupKey(product: Product): string | undefined {
   // Only combine products when the same real photograph, category and product name
   // identify the shared product family. Products without a verified image remain separate.
+  if (product.insertFamily) return JSON.stringify(["insert", product.categoryId, product.insertFamily]);
   if (!product.image || !product.name || (!product.categoryId && !product.category)) return undefined;
   return JSON.stringify([product.image, product.categoryId ?? product.category, product.name]);
 }

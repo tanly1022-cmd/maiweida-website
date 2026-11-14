@@ -10,8 +10,9 @@ const manifest = read("product-image-manifest.json");
 const categories = normalizeCategories(read("data/categories.json"));
 const products = normalizeCatalog(source, categories);
 test("all assigned catalog images exist and match the extraction manifest", () => {
-  assert.equal(manifest.products_total, source.length);
-  assert.equal(manifest.assignments.length + manifest.unresolved.length, source.length);
+  const originalSource = source.filter((row: { id: string }) => !row.id.startsWith("mwd-insert-"));
+  assert.equal(manifest.products_total, originalSource.length);
+  assert.equal(manifest.assignments.length + manifest.unresolved.length, originalSource.length);
   for (const [name, asset] of Object.entries(manifest.assets)) {
     const bytes = readFileSync(join("public/images/products", name));
     assert.equal(createHash("sha256").update(bytes).digest("hex"), (asset as {sha256: string}).sha256);

@@ -157,7 +157,8 @@
       },
       {
         "id": "threading-inserts",
-        "name": "Threading inserts"
+        "name": "Threading inserts",
+        "showWhenEmpty": true
       },
       {
         "id": "parting-and-grooving-inserts",
@@ -169,7 +170,12 @@
       },
       {
         "id": "aluminum-insert",
-        "name": "Aluminum insert"
+        "name": "Aluminum inserts",
+        "showWhenEmpty": true
+      },
+      {
+        "id": "deep-hole-drilling-inserts",
+        "name": "Deep-hole drilling inserts"
       },
       {
         "id": "other-cnc-inserts",
