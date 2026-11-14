@@ -12,7 +12,7 @@ export function CategorySidebar({ categories, selected, query, total }: { catego
   }
   return <aside aria-label="Catalog categories" className="min-w-0">
     <h2 className="eyebrow mb-4 text-muted">Categories</h2>
-    <Link href={href("")} aria-current={!selected ? "page" : undefined} className={`category-link mb-3 flex justify-between border-b border-line py-3 text-xs ${!selected ? "category-active font-semibold" : ""}`}>All products <span className="font-mono">{total}</span></Link>
+    <Link href={href("")} aria-current={!selected ? "page" : undefined} className={`category-link mb-3 flex justify-between border-b border-line py-3 text-xs ${!selected ? "category-active font-semibold" : ""}`}>All model references <span className="font-mono">{total}</span></Link>
     <nav aria-label="Product category tree">
       {categories.map(parent => {
         const active = selected === parent.name || parent.children.some(child => child.name === selected);

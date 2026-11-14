@@ -77,5 +77,36 @@ export function filterProducts(products: Product[], query: string, category: str
   return products.filter(p => (!category || p.category === category || p.categoryParent === category || p.categoryId === category || p.categoryParentId === category) && words.every(word =>
     [p.model, p.name, p.categoryParent, p.category, p.material, p.coating, p.application].filter(Boolean).join(" ").toLocaleLowerCase("en").includes(word)));
 }
+export type ProductGroup = { key: string; product: Product; variants: Product[] };
+
+function productGroupKey(product: Product): string | undefined {
+  // Only combine products when the same real photograph, category and product name
+  // identify the shared product family. Products without a verified image remain separate.
+  if (!product.image || !product.name || (!product.categoryId && !product.category)) return undefined;
+  return JSON.stringify([product.image, product.categoryId ?? product.category, product.name]);
+}
+
+export function groupProducts(products: Product[]): ProductGroup[] {
+  const groups = new Map<string, ProductGroup>();
+  const ordered: ProductGroup[] = [];
+  for (const product of products) {
+    const familyKey = productGroupKey(product);
+    if (!familyKey) {
+      ordered.push({ key: product.id, product, variants: [product] });
+      continue;
+    }
+    const key = `family:${familyKey}`;
+    const existing = groups.get(key);
+    if (existing) {
+      existing.variants.push(product);
+      continue;
+    }
+    const group = { key, product, variants: [product] };
+    groups.set(key, group);
+    ordered.push(group);
+  }
+  return ordered;
+}
+
 export function productTitle(product: Product) { return product.name ?? product.model; }
 export function jsonLdString(value: unknown) { return JSON.stringify(value).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026"); }

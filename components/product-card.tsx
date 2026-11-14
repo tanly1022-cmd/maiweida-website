@@ -1,6 +1,50 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { type ChangeEvent } from "react";
 import type { Product } from "@/lib/catalog-core";
 import { Arrow } from "./ui";
-export function ProductImage({ product, large = false }: { product: Product; large?: boolean }) { return <div className={`product-image relative ${large ? "aspect-square" : "aspect-[4/3]"}`}><Image src={product.image ?? "/images/product-placeholder.svg"} alt={product.image ? `Catalog family photograph for ${product.model}; representative configuration` : `Replaceable schematic placeholder for ${product.model}; not a product photograph`} fill sizes={large ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"} className="object-contain p-7" loading="lazy" unoptimized />{!product.image && <span className="absolute bottom-3 left-4 text-[9px] uppercase tracking-[.15em] text-muted">Illustration / image placeholder</span>}</div>; }
-export function ProductCard({ product }: { product: Product }) { return <article className="product-card group flex min-w-0 flex-col border border-line bg-white"><Link href={`/products/${product.id}`} aria-label={`View ${product.model}`} className="block border-b border-line"><ProductImage product={product} /></Link><div className="flex flex-1 flex-col p-6">{product.isFamilyReference && <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-muted">Family reference</p>}{product.category && <p className="mb-3 break-anywhere text-[10px] font-semibold leading-4 tracking-[.08em] text-muted">{product.category}</p>}<h3 className="break-anywhere text-lg"><Link href={`/products/${product.id}`} className="hover:underline underline-offset-4">{product.model}</Link></h3>{product.name && product.name !== product.category && <p className="mt-2 text-sm text-muted">{product.name}</p>}{(product.material || product.coating || product.application) && <dl className="mt-4 space-y-2 text-xs leading-5">{product.material && <div className="flex gap-3"><dt className="w-18 shrink-0 text-muted">Material</dt><dd>{product.material}</dd></div>}{product.coating && <div className="flex gap-3"><dt className="w-18 shrink-0 text-muted">Coating</dt><dd>{product.coating}</dd></div>}{product.application && <div className="flex gap-3"><dt className="w-18 shrink-0 text-muted">Application</dt><dd className="line-clamp-2 break-anywhere">{product.application}</dd></div>}</dl>}<Link href={`/products/${product.id}`} className="mt-auto flex items-center justify-between gap-3 border-t border-line pt-5 text-xs font-semibold text-steel" style={{ marginTop: "1.5rem" }}>View product <Arrow diagonal /></Link></div></article>; }
+
+export function ProductImage({ product, large = false }: { product: Product; large?: boolean }) {
+  return <div className={`product-image relative ${large ? "aspect-square" : "aspect-[4/3]"}`}>
+    <Image src={product.image ?? "/images/product-placeholder.svg"} alt={product.image ? `Catalog family photograph for ${product.model}; representative configuration` : `Replaceable schematic placeholder for ${product.model}; not a product photograph`} fill sizes={large ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"} className="object-contain p-7" loading="lazy" unoptimized />
+    {!product.image && <span className="absolute bottom-3 left-4 text-[9px] uppercase tracking-[.15em] text-muted">Illustration / image placeholder</span>}
+  </div>;
+}
+
+function variantLabel(product: Product) {
+  const dimensions = product.specs.slice(0, 2).map(spec => `${spec.label}: ${spec.value}${spec.unit && spec.unit !== "TBD" ? ` ${spec.unit}` : ""}`);
+  return [product.model, ...dimensions].join(" - ");
+}
+
+export function ProductCard({ product, variants = [product] }: { product: Product; variants?: Product[] }) {
+  const grouped = variants.length > 1;
+  const heading = grouped ? (product.name ?? product.model) : product.model;
+  function handleVariantChange(event: ChangeEvent<HTMLSelectElement>) {
+    const id = event.target.value;
+    if (id) window.location.assign(`/products/${id}`);
+  }
+  return <article className="product-card group flex min-w-0 flex-col border border-line bg-white">
+    <Link href={`/products/${product.id}`} aria-label={`View ${heading}`} className="block border-b border-line"><ProductImage product={product} /></Link>
+    <div className="flex flex-1 flex-col p-6">
+      {product.isFamilyReference && <p className="mb-3 text-[10px] font-semibold uppercase tracking-wider text-muted">Family reference</p>}
+      {product.category && <p className="mb-3 break-anywhere text-[10px] font-semibold leading-4 tracking-[.08em] text-muted">{product.category}</p>}
+      <h3 className="break-anywhere text-lg"><Link href={`/products/${product.id}`} className="hover:underline underline-offset-4">{heading}</Link></h3>
+      {grouped ? <p className="mt-2 text-sm text-muted">{variants.length} model references share this product image.</p> : product.name && product.name !== product.category && <p className="mt-2 text-sm text-muted">{product.name}</p>}
+      {grouped && <div className="mt-5 border-t border-line pt-5">
+        <label htmlFor={`model-options-${product.id}`} className="field-label">Model / size option</label>
+        <select id={`model-options-${product.id}`} className="input" defaultValue="" onChange={handleVariantChange}>
+          <option value="">Select a model</option>
+          {variants.map(variant => <option key={variant.id} value={variant.id}>{variantLabel(variant)}</option>)}
+        </select>
+      </div>}
+      {(product.material || product.coating || product.application) && <dl className="mt-4 space-y-2 text-xs leading-5">
+        {product.material && <div className="flex gap-3"><dt className="w-18 shrink-0 text-muted">Material</dt><dd>{product.material}</dd></div>}
+        {product.coating && <div className="flex gap-3"><dt className="w-18 shrink-0 text-muted">Coating</dt><dd>{product.coating}</dd></div>}
+        {product.application && <div className="flex gap-3"><dt className="w-18 shrink-0 text-muted">Application</dt><dd className="line-clamp-2 break-anywhere">{product.application}</dd></div>}
+      </dl>}
+      <Link href={`/products/${product.id}`} className="mt-auto flex items-center justify-between gap-3 border-t border-line pt-5 text-xs font-semibold text-steel" style={{ marginTop: "1.5rem" }}>View product <Arrow diagonal /></Link>
+    </div>
+  </article>;
+}
