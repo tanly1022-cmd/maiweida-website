@@ -1,0 +1,67 @@
+import type { Metadata, MetadataRoute } from "next";
+import type { Product } from "./catalog-core";
+import { absoluteUrl, site } from "./site";
+
+export const STATIC_PAGE_PATHS = ["/", "/products/", "/about/", "/industries/", "/contact/"] as const;
+export const DEFAULT_SEO_TITLE = "MAIVIDA | Carbide Cutting Tools & CNC Toolholding Supplier";
+
+export function canonicalUrl(path: string): string {
+  if (/[?#]/.test(path)) throw new Error("Canonical page paths must not contain query strings or fragments.");
+  return absoluteUrl(path === "/" ? "/" : path.replace(/\/+$/, "") + "/");
+}
+
+export function productPath(id: string): string {
+  return "/products/" + encodeURIComponent(id) + "/";
+}
+
+/** Define these nested fields per page: Next.js metadata merges them shallowly. */
+export function pageMetadata(title: string, description: string, path: string, image?: string): Metadata {
+  const url = canonicalUrl(path);
+  const displayTitle = title + " | MAIVIDA";
+  const imageUrl = absoluteUrl(image || "/images/og-cover.png");
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: "website", locale: "en_US", siteName: site.name,
+      title: displayTitle, description, url,
+      images: [{ url: imageUrl, alt: image ? title : "MAIVIDA cutting tools and CNC toolholding" }],
+    },
+    twitter: { card: "summary_large_image", title: displayTitle, description, images: [imageUrl] },
+  };
+}
+
+export function productMetadata(product: Product): Metadata {
+  const category = product.name || product.category;
+  const title = category && category.toLowerCase() !== product.model.toLowerCase()
+    ? product.model + " - " + category : product.model;
+  // Only use existing catalog facts; never invent stock, prices, coatings or performance.
+  const description = [
+    product.model + (category ? " - " + category : "") + ".",
+    product.isFamilyReference
+      ? "Catalog family reference. Confirm exact size and configuration with Maivida Tech before ordering."
+      : "View catalog details and request a model-specific quote from Maivida Tech. Confirm machining requirements before ordering.",
+  ].join(" ");
+  return pageMetadata(title, description, productPath(product.id), product.image);
+}
+
+export function buildSitemapEntries(products: Pick<Product, "id">[]): MetadataRoute.Sitemap {
+  // No query-filter URLs, missing-product URLs, invented update dates or ranking hints.
+  const paths = new Set<string>([...STATIC_PAGE_PATHS, ...products.map(product => productPath(product.id))]);
+  return [...paths].map(path => ({ url: canonicalUrl(path) }));
+}
+
+export function googleVerification(value?: string): string | undefined {
+  const token = value?.trim();
+  if (!token) return undefined;
+  if (!/^[A-Za-z0-9_-]+$/.test(token)) throw new Error("Paste only the Google verification content token, not the entire HTML tag.");
+  return token;
+}
+
+// Public HTML-tag verification token supplied by the site owner on 2026-11-15.
+// Bundling the tag does not mean that Search Console ownership is verified.
+export const DEFAULT_GOOGLE_SITE_VERIFICATION = "wKYuSGR-gsvtBZiWj5pIHm9yzpwmIect92dqU42tHkQ";
+export function configuredGoogleVerification(value?: string): string {
+  return googleVerification(value) ?? DEFAULT_GOOGLE_SITE_VERIFICATION;
+}

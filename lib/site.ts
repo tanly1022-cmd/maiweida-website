@@ -1,15 +1,18 @@
+import { resolveSiteOrigin } from "./site-origin";
+
 ﻿export const site = {
   name: "MAIVIDA",
-  description: "Explore the MAIVIDA model catalog and send a specification-led tooling enquiry. Share your workpiece, machine interface and machining requirements.",
+  description: "Maivida Tech supplies carbide cutting tools and CNC toolholding, with model selection support for distributors, machining workshops and industrial buyers.",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "",
 };
-function getOrigin() {
-  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (!configured) return undefined;
-  try { const url = new URL(configured); return ["https:", "http:"].includes(url.protocol) ? url.origin : undefined; } catch { return undefined; }
+// Keep one production origin even when the environment variable was not set.
+export const siteOrigin = resolveSiteOrigin(process.env.NEXT_PUBLIC_SITE_URL);
+export function absoluteUrl(path: string): string {
+  if (!path.startsWith("/") || path.startsWith("//")) throw new Error("Expected a root-relative site path.");
+  const url = new URL(path, siteOrigin);
+  if (url.origin !== siteOrigin) throw new Error("Site URL must stay on the canonical origin.");
+  return url.toString();
 }
-export const siteOrigin = getOrigin();
-export function absoluteUrl(path: string) { return siteOrigin ? new URL(path, siteOrigin).toString() : undefined; }
 export function rfqHref(model?: string) { return model ? `/contact?model=${encodeURIComponent(model)}` : "/contact"; }
 export const industries = [
   { id: "automotive", number: "01", title: "Automotive", focus: "Repeatable processes start with a defined requirement.", description: "For an automotive machining enquiry, identify the component, workpiece material and operation. Include the machine interface, drawing tolerances and the current tooling setup so the discussion stays specific.", checks: ["Component and operation", "Material and tolerance", "Machine and tool interface"] },

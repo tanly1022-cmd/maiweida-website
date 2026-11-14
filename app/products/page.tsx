@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { CatalogBrowser, CatalogView } from "@/components/catalog-browser";
 import { navigationCategories, products } from "@/lib/catalog";
-import { absoluteUrl } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Product catalog",
-  description: "Search MAIVIDA catalog models and filter by the available English product categories. Confirm specifications with a model-specific enquiry.",
-  alternates: { canonical: absoluteUrl("/products") },
-};
+export const metadata: Metadata = pageMetadata(
+  "Carbide Cutting Tools & CNC Toolholding Catalog",
+  "Browse MAIVIDA cutting tool and CNC toolholding models. Compare catalog references and send your model, quantity and machining requirements for a quote.",
+  "/products/",
+);
 
 export default function Products() {
   // The build reads private JSON on the server. The exported browser receives

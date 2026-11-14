@@ -3,19 +3,15 @@ import { Suspense } from "react";
 import Link from "next/link";
 import { Breadcrumbs, Container, Eyebrow, PageIntro } from "@/components/ui";
 import { RfqForm } from "@/components/rfq-form";
-import { absoluteUrl, site } from "@/lib/site";
+import { site } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 import { RfqQueryForm } from "@/components/rfq-query-form";
 
-export const metadata: Metadata = {
-  title: "Contact / Request a Quote",
-  description: "Send the MAIVIDA sales team your product model, quantity and machining requirements through the online RFQ form.",
-  alternates: { canonical: absoluteUrl("/contact") },
-  openGraph: {
-    title: "Contact / Request a Quote | MAIVIDA",
-    description: "A model. A requirement. Send a specification-led tooling enquiry to the MAIVIDA sales team.",
-    ...(absoluteUrl("/contact") ? { url: absoluteUrl("/contact") } : {}),
-  },
-};
+export const metadata: Metadata = pageMetadata(
+  "Contact / Request a Quote",
+  "Send Maivida Tech your cutting tool model, quantity and machining requirements. Request a specification-led quote through the online RFQ form.",
+  "/contact/",
+);
 
 export default function Contact() {
   return <>

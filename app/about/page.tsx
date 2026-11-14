@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/ui";
-import { absoluteUrl } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Maivida Tech",
-  alternates: { canonical: absoluteUrl("/about") },
-};
+export const metadata: Metadata = pageMetadata(
+  "About Maivida Tech",
+  "Learn about Maivida Tech, a China-based carbide cutting tool supplier drawing on Zhuzhou's supply chain, serving distributors and machining workshops.",
+  "/about/",
+);
 
 export default function About() {
   return (

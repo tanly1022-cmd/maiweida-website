@@ -47,7 +47,7 @@ The form implementation is in `components/rfq-form.tsx`. It posts the seven RFQ 
 
 Copy `.env.example` to `.env.local`. Set `NEXT_PUBLIC_CONTACT_EMAIL` to a verified business address; leave it empty to hide the address. Set `NEXT_PUBLIC_SITE_URL` to the final HTTPS production origin for canonical, Open Graph and structured-data URLs. Never put secrets in `NEXT_PUBLIC_*` variables.
 
-Implemented routes: Home, Products, Product Detail, and Contact / RFQ. About and Industries destinations in the pre-existing navigation remain unfinished; do not represent them as completed pages. The RFQ submits through Formspree to the configured sales inbox.
+Implemented routes: Home, Products, Product Detail, About, Industries, and Contact / RFQ. The RFQ submits through Formspree to the configured sales inbox.
 
 For Vercel, run the commands from this directory (the Next.js project root):
 
@@ -89,3 +89,14 @@ Run `npm.cmd test`, `npm.cmd run build`, then `npm.cmd run check:export`. The ex
 The hero JPEG is a byte-for-byte copy of the already extracted `public/images/products/MRGNR_L.jpg`; no PDF re-extraction or product-data changes are needed. `components/hero-image.tsx` uses an ordinary `img` with dimensions, eager loading and a root-relative URL. The remaining Next.js Image components still use the global `images.unoptimized: true` setting in `next.config.ts`, alongside `output: "export"`.
 
 After deploying the **contents** of the new archive, open `/images/hero-tool.jpg` on your Netlify domain to confirm the image is served, then hard-refresh the homepage. If the old ?Toolholding / reference view? label remains, the browser or active deployment is still serving the previous homepage; the new label reads ?MRGNR/L / Turning toolholder?. The export check asserts that the HTML contains the JPEG image tag and none of the old hero placeholder text.
+
+
+## Google indexing foundations (2026-11-15)
+
+See [SEO-SETUP.md](SEO-SETUP.md) for scope, validation, known limitations and safe deployment.
+
+- The canonical production origin defaults to `https://maivida.com` even when `NEXT_PUBLIC_SITE_URL` is unset. An invalid nonempty origin stops the build instead of silently omitting canonical URLs. Preview deployment hostnames are not used as canonical origins.
+- `app/robots.ts` and `app/sitemap.ts` are force-static metadata routes compatible with the existing static export. Sitemap routes come from the same filtered catalog as product pages, not the raw private source.
+- Page canonical URLs, Open Graph URLs and product structured-data URLs use the existing trailing-slash convention. Query-filter and RFQ-prefill URLs are not included in the sitemap.
+- The public Google HTML-tag token supplied by the owner on 2026-11-15 is bundled in `lib/seo.ts`. No environment variable is required for this token. A nonempty `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` overrides it and must be reviewed before release. The tag is not proof of completed ownership verification.
+- Run `npm.cmd run test:seo`, `npm.cmd run typecheck`, `npm.cmd run build`, `npm.cmd run check:export`, and `npm.cmd run check:seo` before release. The full pre-existing test command additionally needs historical manifest files not included in GitHub; do not describe it as fully passing.
