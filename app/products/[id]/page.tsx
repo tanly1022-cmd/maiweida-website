@@ -9,6 +9,7 @@ import { Arrow, Breadcrumbs, Container, Eyebrow } from "@/components/ui";
 import { getProduct, products } from "@/lib/catalog";
 import { jsonLdString } from "@/lib/catalog-core";
 import { absoluteUrl, rfqHref } from "@/lib/site";
+import { canonicalUrl, productMetadata, productPath } from "@/lib/seo";
 type Props = { params: Promise<{ id: string }> };
 export const dynamicParams = false;
 export const revalidate = false;
@@ -16,7 +17,7 @@ export function generateStaticParams() { return products.map(p => ({ id: p.id })
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params, product = getProduct(id);
   if (!product) return { title: "Product not found", robots: { index: false } };
-  return { title: product.model, description: product.description.slice(0, 170), alternates: { canonical: absoluteUrl(`/products/${product.id}`) }, openGraph: { title: `${product.model} | MAIVIDA`, description: product.description.slice(0, 170), type: "website", ...(product.image && absoluteUrl(product.image) ? { images: [{ url: absoluteUrl(product.image)!, alt: `Catalog family photograph for ${product.model}` }] } : {}) } };
+  return productMetadata(product);
 }
 export default async function ProductDetail({ params }: Props) {
   const { id } = await params, product = getProduct(id);
@@ -25,7 +26,7 @@ export default async function ProductDetail({ params }: Props) {
   const schema = { "@context": "https://schema.org", "@type": "Product", name: product.model, model: product.model, description: product.description,
     ...(product.category ? { category: product.category } : {}),
     ...(product.image && absoluteUrl(product.image) ? { image: absoluteUrl(product.image) } : {}),
-    ...(absoluteUrl(`/products/${product.id}`) ? { url: absoluteUrl(`/products/${product.id}`) } : {}) };
+    url: canonicalUrl(productPath(product.id)) };
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(schema) }} />
     <Container>

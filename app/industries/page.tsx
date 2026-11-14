@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Container, Eyebrow } from "@/components/ui";
-import { absoluteUrl } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Industries",
-  alternates: { canonical: absoluteUrl("/industries") },
-};
+export const metadata: Metadata = pageMetadata(
+  "Carbide Tool Industry Insights",
+  "Read MAIVIDA perspectives on carbide tooling markets and application-led sourcing. Discuss your workpiece, machine and tooling requirements with our team.",
+  "/industries/",
+);
 
 export default function Industries() {
   return (

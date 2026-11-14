@@ -5,8 +5,14 @@ import { Arrow, Container, Eyebrow, QuoteCTA } from "@/components/ui";
 import { ProductCard } from "@/components/product-card";
 import { TrustSection } from "@/components/trust-section";
 import { navigationCategories, getFeaturedProducts } from "@/lib/catalog";
-import { faqs, industries, absoluteUrl } from "@/lib/site";
-export const metadata: Metadata = { alternates: { canonical: absoluteUrl("/") } };
+import { faqs, industries, site } from "@/lib/site";
+import { DEFAULT_SEO_TITLE, pageMetadata } from "@/lib/seo";
+export const metadata: Metadata = {
+  ...pageMetadata("Carbide Cutting Tools & CNC Toolholding Supplier", site.description, "/"),
+  title: { absolute: DEFAULT_SEO_TITLE },
+  openGraph: { ...pageMetadata("Carbide Cutting Tools & CNC Toolholding Supplier", site.description, "/").openGraph, title: DEFAULT_SEO_TITLE },
+  twitter: { ...pageMetadata("Carbide Cutting Tools & CNC Toolholding Supplier", site.description, "/").twitter, title: DEFAULT_SEO_TITLE },
+};
 export default function Home() {
   const entries = navigationCategories;
   return <>
