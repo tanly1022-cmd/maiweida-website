@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { rfqFields, validateRfq, type RfqErrors, type RfqField } from "@/lib/rfq";
 import { Arrow } from "./ui";
+import { Icon } from "./icon";
 
 const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT?.trim() || "https://formspree.io/f/xjywkpzg";
 const GENERIC_SUBMISSION_ERROR = "We could not send your enquiry. Please try again.";
@@ -95,7 +96,7 @@ export function RfqForm({ initialModel = "" }: { initialModel?: string }) {
           </div>;
         })}
         <div className="border-t border-line pt-7 sm:col-span-2">
-          <button type="submit" disabled={submitting} className="button button-dark w-full sm:w-auto">{submitting ? "Sending..." : "Submit enquiry"} <Arrow /></button>
+          <button type="submit" disabled={submitting} className="button button-dark w-full sm:w-auto"><span className="inline-flex items-center gap-2"><Icon name="quote" />{submitting ? "Sending..." : "Submit enquiry"}</span> <Arrow /></button>
           <p className="mt-4 text-xs leading-6 text-muted">Your enquiry is submitted through Formspree to the configured MAIVIDA sales inbox.</p>
         </div>
       </fieldset>

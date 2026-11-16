@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { Icon, categoryIcon } from "./icon";
 import type { PopulatedCategory } from "@/lib/catalog-core";
 
 export function CategorySidebar({ categories, selected, query, total }: { categories: PopulatedCategory[]; selected: string; query: string; total: number }) {
@@ -16,14 +17,14 @@ export function CategorySidebar({ categories, selected, query, total }: { catego
       <span className="mb-4 block h-0.5 w-6 bg-orange" aria-hidden="true" />
       <h2 className="text-xl font-semibold">Products</h2>
     </div>
-    <Link href={href("")} aria-current={!selected ? "page" : undefined} className={`category-link flex items-center justify-between gap-3 border-b border-line px-4 py-4 text-xs ${!selected ? "category-active font-semibold" : ""}`}>All model references <span className="font-mono text-[10px]">{total}</span></Link>
+    <Link href={href("")} aria-current={!selected ? "page" : undefined} className={`category-link flex items-center justify-between gap-3 border-b border-line px-4 py-4 text-xs ${!selected ? "category-active font-semibold" : ""}`}><span className="icon-label inline-flex items-center gap-2"><Icon name="catalog" />All model references</span> <span className="font-mono text-[10px]">{total}</span></Link>
     <nav aria-label="Product category tree">
       {categories.map(parent => {
         const active = selected === parent.name || parent.children.some(child => child.name === selected);
         const open = expanded[parent.id] ?? active;
         return <div key={parent.id} className="border-b border-line">
           <div className={`flex items-center text-sm ${active ? "category-active" : "text-steel"}`}>
-            <Link href={href(parent.name)} aria-current={selected === parent.name ? "page" : undefined} className="category-link min-w-0 flex-1 px-4 py-4 font-medium">{parent.name}</Link>
+            <Link href={href(parent.name)} aria-current={selected === parent.name ? "page" : undefined} className="category-link icon-label flex min-w-0 flex-1 items-center gap-2 px-4 py-4 font-medium"><Icon name={categoryIcon(parent.id)} /><span>{parent.name}</span></Link>
             <span className="text-[10px] text-muted">{parent.count || "Catalog pending"}</span>
             {parent.children.length > 0 ? <button type="button" aria-label={`${open ? "Collapse" : "Expand"} ${parent.name}`} aria-expanded={open} aria-controls={`children-${parent.id}`} onClick={() => setExpanded(current => ({ ...current, [parent.id]: !open }))} className="category-link ml-3 flex h-12 w-11 shrink-0 cursor-pointer items-center justify-center border-l border-line">
               <svg className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4" stroke="currentColor" strokeWidth="1.5" /></svg>

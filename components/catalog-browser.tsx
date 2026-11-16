@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Container, PageIntro, Arrow } from "./ui";
 import { ProductCard } from "./product-card";
 import { CategorySidebar } from "./category-sidebar";
+import { Icon } from "./icon";
 import { InsertsReference } from "./inserts-reference";
 import { englishValue, filterProducts, groupProducts, type PopulatedCategory, type Product } from "@/lib/catalog-core";
 
@@ -70,7 +71,7 @@ export function CatalogView({ products, categories, params = new URLSearchParams
             </optgroup>)}
           </select>
         </div>
-        <button type="submit" className="button button-dark">Apply filters <Arrow /></button>
+        <button type="submit" className="button button-dark"><span className="inline-flex items-center gap-2"><Icon name="search" />Apply filters</span> <Arrow /></button>
       </form>
 
       <div className="mt-9 grid gap-9 lg:grid-cols-[260px_1fr]">

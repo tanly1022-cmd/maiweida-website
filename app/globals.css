@@ -7,12 +7,13 @@
   --color-line: #DEE1E4;
   --color-paper: #F5F6F7;
   --font-sans: "Inter", Arial, sans-serif;
-  --font-display: "Montserrat", "Inter", Arial, sans-serif;
+  --font-display: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 :root { color-scheme: light; }
 * { box-sizing: border-box; }
 body { margin: 0; background: white; color: #2B2F36; font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
-h1, h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.045em; line-height: 1.12; }
+/* Sharper, bolder key headings; body copy retains its regular weight. */
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -.035em; line-height: 1.15; }
 p { text-wrap: pretty; }
 ::selection { background: #2B2F36; color: white; }
 a, button, input, select, textarea, summary { -webkit-tap-highlight-color: transparent; }
@@ -31,7 +32,7 @@ button:disabled { cursor: not-allowed; opacity: .65; }
 .button-light:hover { background: #e8eaec; }
 .brand { display: inline-flex; align-items: center; color: #2B2F36; min-width: 0; }
 .brand-logo { display: block; width: min(400px, 100%); height: 48px; flex: 0 1 auto; }
-.nav-link { position: relative; color: #59616B; }
+.nav-link { position: relative; color: #59616B; font-family: var(--font-display); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
 .nav-link[aria-current="page"], .nav-link:hover { color: #2B2F36; }
 .nav-link[aria-current="page"]::after { position: absolute; content: ""; height: 2px; width: 18px; background: #E8621A; left: 0; bottom: 5px; }
 .skip-link { position: absolute; top: -100px; left: 16px; z-index: 100; padding: 16px; background: #2B2F36; color: white; }
@@ -95,3 +96,7 @@ details.faq[open] summary::after { content: "−"; }
 .whatsapp-contact:hover { background: #20BD5A; }
 .whatsapp-contact:focus-visible { outline: 3px solid #2B2F36; outline-offset: 4px; }
 footer { padding-bottom: 6rem; }
+
+/* Consistent decorative icons retain text labels and inherit the industrial palette. */
+.icon-label:hover > svg, .icon-label:focus-visible > svg, .nav-link[aria-current="page"] > svg { color: #E8621A; }
+.category-active > .icon-label > svg { color: #E8621A; }

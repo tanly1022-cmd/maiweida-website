@@ -1,9 +1,11 @@
 import { resolveSiteOrigin } from "./site-origin";
 
-﻿export const site = {
+export const site = {
   name: "MAIVIDA",
+  company: "Maivida Tech Co., Ltd.",
+  address: "Building 6, Guanshen Intelligent Manufacturing Technology Equipment City, Zhuzhou, Hunan, China",
   description: "Maivida Tech supplies carbide cutting tools and CNC toolholding, with model selection support for distributors, machining workshops and industrial buyers.",
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "sales@maivida.com",
 };
 // Keep one production origin even when the environment variable was not set.
 export const siteOrigin = resolveSiteOrigin(process.env.NEXT_PUBLIC_SITE_URL);
