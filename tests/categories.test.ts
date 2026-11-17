@@ -11,15 +11,15 @@ const source = read("data/products.json");
 const manifest = read("category-mapping-manifest.json");
 const insertSource = source.filter((row: { id: string }) => row.id.startsWith("mwd-insert-"));
 const categories = normalizeCategories(read("data/categories.json"));
-const products = normalizeCatalog(source, categories);
+const products = normalizeCatalog([...source, ...read("data/end-mills.json")], categories);
 const navigation = populatedCategories(categories, products);
-test("taxonomy retains all seven requested parents in order and a two-level English tree", () => {
-  assert.deepEqual(categories.map(p => p.name), ["Turning Tools", "Milling Tools", "Boring Tools", "Drilling Tools", "CNC Inserts", "Tooling Systems", "Accessories"]);
+test("taxonomy retains original parents plus end mills in order and a two-level English tree", () => {
+  assert.deepEqual(categories.map(p => p.name), ["Turning Tools", "Milling Tools", "Solid Carbide End Mills", "Boring Tools", "Drilling Tools", "CNC Inserts", "Tooling Systems", "Accessories"]);
   assert.doesNotMatch(JSON.stringify(categories), /[\u3400-\u9fff]/u);
   assert.equal(categories[0].children.length, 14);
-  assert.equal(categories[1].children.length, 10);
+  assert.equal(categories[1].children.length, 9);
   for (const parent of categories) {
-    assert.ok(parent.children.some(child => child.name === `Other ${parent.name}`));
+    if (parent.id !== "solid-carbide-end-mills") assert.ok(parent.children.some(child => child.name === `Other ${parent.name}`));
     for (const child of parent.children) assert.ok(!("children" in child));
   }
 });
@@ -103,7 +103,7 @@ test("selected insert family expands automatically without showing empty pending
 });
 
 test("only populated parent categories are visible and empty boring tools stay hidden", () => {
-  assert.deepEqual(navigation.map(p => p.name), ["Turning Tools", "Milling Tools", "Drilling Tools", "CNC Inserts", "Tooling Systems"]);
+  assert.deepEqual(navigation.map(p => p.name), ["Turning Tools", "Milling Tools", "Solid Carbide End Mills", "Drilling Tools", "CNC Inserts", "Tooling Systems"]);
   assert.equal(navigation.find(p => p.id === "boring-tools"), undefined);
   assert.ok(categories.some(p => p.id === "boring-tools"));
 });

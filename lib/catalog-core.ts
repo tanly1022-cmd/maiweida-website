@@ -1,3 +1,4 @@
+import { normalizeEndMill, type EndMill } from "./end-mills";
 export type CategoryChild = { id: string; name: string; showWhenEmpty?: boolean };
 export type Category = CategoryChild & { children: CategoryChild[] };
 export type PopulatedCategory = CategoryChild & { count: number; children: (CategoryChild & { count: number })[] };
@@ -6,7 +7,7 @@ export type GradeRecommendation = { grade: string; recommendation: "main" | "gen
 export type Product = {
   id: string; model: string; name?: string; category?: string; categoryParent?: string; categoryId?: string; categoryParentId?: string; description: string;
   material?: string; coating?: string; application?: string; specs: Spec[]; grades?: string[];
-  image?: string; pdf?: string; insertFamily?: string; insertSeries?: string; drawing?: string; sourcePage?: number; gradeRecommendations?: GradeRecommendation[]; needsReview: boolean; isFamilyReference: boolean;
+  endMill?: EndMill; image?: string; pdf?: string; insertFamily?: string; insertSeries?: string; drawing?: string; sourcePage?: number; gradeRecommendations?: GradeRecommendation[]; needsReview: boolean; isFamilyReference: boolean;
 };
 export const DESCRIPTION_FALLBACK = "Specifications available upon request.";
 const cjk = /[\u2e80-\u2fff\u3000-\u303f\u3040-\u30ff\u3100-\u312f\u3400-\u9fff\uf900-\ufaff\u{20000}-\u{323af}]/u;
@@ -72,7 +73,7 @@ export function normalizeCatalog(raw: unknown, categories: Category[]): Product[
       application: englishValue(row.application_en), specs, grades,
       image: realImage, pdf: localAsset(row.pdf, "pdf"),
       insertFamily: englishValue(row.insert_family), insertSeries: englishValue(row.insert_series),
-      drawing: localAsset(row.drawing, "image"),
+      drawing: localAsset(row.drawing, "image"), endMill: normalizeEndMill(row.end_mill),
       sourcePage: Number.isInteger(row.source_printed_page) && Number(row.source_printed_page) > 0 ? Number(row.source_printed_page) : undefined,
       gradeRecommendations: Array.isArray(row.grade_recommendations) ? row.grade_recommendations.flatMap((entry): GradeRecommendation[] => {
         const item = record(entry), grade = englishValue(item.grade), recommendation = item.recommendation;
@@ -84,7 +85,7 @@ export function normalizeCatalog(raw: unknown, categories: Category[]): Product[
 export function filterProducts(products: Product[], query: string, category: string) {
   const words = query.toLocaleLowerCase("en").trim().split(/\s+/).filter(Boolean);
   return products.filter(p => (!category || p.category === category || p.categoryParent === category || p.categoryId === category || p.categoryParentId === category) && words.every(word =>
-    [p.model, p.name, p.categoryParent, p.category, p.material, p.coating, p.application, ...(p.grades ?? [])].filter(Boolean).join(" ").toLocaleLowerCase("en").includes(word)));
+    [p.model, p.name, p.categoryParent, p.category, p.material, p.coating, p.application, ...(p.grades ?? []), ...(p.endMill?.variants.map(v => v.model) ?? [])].filter(Boolean).join(" ").toLocaleLowerCase("en").includes(word)));
 }
 export type ProductGroup = { key: string; product: Product; variants: Product[] };
 

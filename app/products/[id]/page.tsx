@@ -1,3 +1,5 @@
+import { EndMillOptions } from "@/components/end-mill-options";
+import { EndMillSpecifications } from "@/components/end-mill-specifications";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -34,13 +36,14 @@ export default async function ProductDetail({ params }: Props) {
       <section aria-label="Product enquiry" className="grid gap-9 pb-16 md:grid-cols-[1.2fr_1fr] lg:gap-16 lg:pb-24">
         <div className="min-w-0">
           <div className="border border-line"><ProductImage product={product} large /></div>
-          <p className="mt-4 max-w-xl text-xs leading-6 text-muted">{product.image ? (product.insertFamily ? "Catalog photograph for this insert series. Dimensions and grade availability are model-specific." : "Catalog family photograph. Confirm exact size, orientation and configuration before ordering.") : "Placeholder illustration only; not a product photograph or dimensional drawing."}</p>
+          <p className="mt-4 max-w-xl text-xs leading-6 text-muted">{product.image ? (product.insertFamily ? "Catalog photograph for this insert series. Dimensions and grade availability are model-specific." : product.endMill ? "Catalog photograph for this end-mill series, displayed without enlargement beyond its original resolution. Dimensions and appearance vary by selected model; confirm the exact configuration before ordering." : "Catalog family photograph. Confirm exact size, orientation and configuration before ordering.") : product.endMill ? "Independently authored geometry schematic only; not a product photograph or a dimensional drawing. Actual appearance may differ by model." : "Placeholder illustration only; not a product photograph or dimensional drawing."}</p>
         </div>
         <div className="min-w-0 self-center border-t border-line py-8 md:border-t-0 md:py-12">
           <Eyebrow>{product.isFamilyReference ? "Family reference" : "Catalog model"}</Eyebrow>
           <p className="mt-7 text-xs font-medium text-muted">Model number</p>
           <h1 className="mt-3 break-anywhere text-4xl leading-tight lg:text-5xl">{product.model}</h1>
           <p className="mt-6 max-w-md text-sm leading-7 text-muted">{product.description}</p>
+          {product.endMill && <EndMillOptions key={product.id} product={product} />}
           {product.insertFamily && <InsertOptions key={product.id} product={product} variants={variants} />}
           {!product.insertFamily && product.grades?.length ? <div className="mt-7 max-w-md border-y border-line py-5">
             <p className="field-label">Available grades</p>
@@ -48,11 +51,12 @@ export default async function ProductDetail({ params }: Props) {
               {product.grades.map(grade => <span key={grade} className="border border-line bg-paper px-3 py-2 text-xs font-medium">{grade}</span>)}
             </div>
           </div> : null}
-          {!product.insertFamily && <Link href={rfqHref(product.model)} className="button button-dark mt-9 w-full justify-between sm:w-auto">Request a Quote <Arrow /></Link>}
+          {!product.insertFamily && !product.endMill && <Link href={rfqHref(product.model)} className="button button-dark mt-9 w-full justify-between sm:w-auto">Request a Quote <Arrow /></Link>}
           {product.needsReview && <p className="mt-5 max-w-md text-xs leading-6 text-muted">{product.isFamilyReference ? "This is a catalog family reference, not a verified individual SKU. Include the required configuration with your enquiry." : "Catalog reference details require confirmation before ordering."}</p>}
           <Link href="/products" className="category-link mt-8 inline-block text-xs underline underline-offset-4">Back to all products</Link>
         </div>
       </section>
+      <EndMillSpecifications product={product} />
       {product.insertFamily && <section aria-labelledby="insert-specifications" className="mb-16 border-t border-line pt-9">
         <Eyebrow>Geometry & specifications</Eyebrow>
         <h2 id="insert-specifications" className="mt-4 text-2xl md:text-3xl">{product.insertSeries} - model specifications</h2>

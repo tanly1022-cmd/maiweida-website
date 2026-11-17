@@ -98,12 +98,30 @@
         "name": "Mould milling tools"
       },
       {
-        "id": "solid-carbide-end-mills",
-        "name": "Solid carbide end mills"
-      },
-      {
         "id": "other-milling-tools",
         "name": "Other Milling Tools"
+      }
+    ]
+  },
+  {
+    "id": "solid-carbide-end-mills",
+    "name": "Solid Carbide End Mills",
+    "children": [
+      {
+        "id": "square-end-mills",
+        "name": "Square End Mills"
+      },
+      {
+        "id": "ball-nose-end-mills",
+        "name": "Ball Nose End Mills"
+      },
+      {
+        "id": "corner-radius-end-mills",
+        "name": "Corner Radius End Mills"
+      },
+      {
+        "id": "aluminum-end-mills",
+        "name": "Aluminum End Mills"
       }
     ]
   },

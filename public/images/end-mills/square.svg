@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 380" role="img" aria-label="Square end end mill geometry schematic, not a product photograph">
+<rect width="400" height="380" fill="#F8F9FA"/><g transform="translate(80 0)"><path d="M95 60 H145 V300 H95 Z" fill="#A8B0B8" stroke="#181A1F" stroke-width="2"/>
+<path d="M95 175 H145 M95 205 L145 175 M95 240 L145 210 M95 275 L145 245 M110 300 L145 280" fill="none" stroke="#525B64" stroke-width="3"/>
+<path d="M90 60 H67 M90 307 H67 M72 60 V307 M95 333 V345 M145 333 V345 M95 340 H145" fill="none" stroke="#A8B0B8"/>
+<text x="57" y="190" font-family="Arial,sans-serif" font-size="12" fill="#525B64">L</text><text x="116" y="357" font-family="Arial,sans-serif" font-size="12" fill="#525B64">D</text></g>
+<text x="20" y="28" font-family="Arial,sans-serif" font-size="11" fill="#525B64">SQUARE END / GEOMETRY ONLY</text>
+</svg>

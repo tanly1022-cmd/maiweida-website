@@ -2,13 +2,16 @@ import "server-only";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { normalizeCatalog, normalizeCategories, populatedCategories } from "./catalog-core";
-// Read on the server only. These private source files are not public assets or client imports.
+// Read on the server only, including private catalog image provenance. Never import raw source rows on the client.
 const rawCategories: unknown = JSON.parse(readFileSync(join(process.cwd(), "data/categories.json"), "utf8").replace(/^\uFEFF/, ""));
 const rawProducts: unknown = JSON.parse(readFileSync(join(process.cwd(), "data/products.json"), "utf8").replace(/^\uFEFF/, ""));
+const rawEndMills: unknown = JSON.parse(readFileSync(join(process.cwd(), "data/end-mills.json"), "utf8"));
+if (!Array.isArray(rawProducts) || !Array.isArray(rawEndMills)) throw new Error("Catalog sources must be arrays.");
 export const categories = normalizeCategories(rawCategories);
-export const products = normalizeCatalog(rawProducts, categories).map(product => ({
+export const products = normalizeCatalog([...rawProducts, ...rawEndMills], categories).map(product => ({
   ...product,
   image: product.image && existsSync(join(process.cwd(), "public", product.image)) ? product.image : undefined,
+  drawing: product.drawing && existsSync(join(process.cwd(), "public", product.drawing)) ? product.drawing : undefined,
   pdf: product.pdf && existsSync(join(process.cwd(), "public", product.pdf)) ? product.pdf : undefined
 })).filter(product => !product.isFamilyReference || !!product.image);
 export const navigationCategories = populatedCategories(categories, products);
