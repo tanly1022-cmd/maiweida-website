@@ -15,3 +15,6 @@ product-image-manifest.json
 
 # Previously generated static export folders.
 MAIWEIDA-static-site-*/
+
+# Local Netlify folder
+.netlify
