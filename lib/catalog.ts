@@ -6,9 +6,10 @@ import { normalizeCatalog, normalizeCategories, populatedCategories } from "./ca
 const rawCategories: unknown = JSON.parse(readFileSync(join(process.cwd(), "data/categories.json"), "utf8").replace(/^\uFEFF/, ""));
 const rawProducts: unknown = JSON.parse(readFileSync(join(process.cwd(), "data/products.json"), "utf8").replace(/^\uFEFF/, ""));
 const rawEndMills: unknown = JSON.parse(readFileSync(join(process.cwd(), "data/end-mills.json"), "utf8"));
-if (!Array.isArray(rawProducts) || !Array.isArray(rawEndMills)) throw new Error("Catalog sources must be arrays.");
+const rawMiningTools: unknown = JSON.parse(readFileSync(join(process.cwd(), "data/mining-tools.json"), "utf8"));
+if (!Array.isArray(rawProducts) || !Array.isArray(rawEndMills) || !Array.isArray(rawMiningTools)) throw new Error("Catalog sources must be arrays.");
 export const categories = normalizeCategories(rawCategories);
-export const products = normalizeCatalog([...rawProducts, ...rawEndMills], categories).map(product => ({
+export const products = normalizeCatalog([...rawProducts, ...rawEndMills, ...rawMiningTools], categories).map(product => ({
   ...product,
   image: product.image && existsSync(join(process.cwd(), "public", product.image)) ? product.image : undefined,
   drawing: product.drawing && existsSync(join(process.cwd(), "public", product.drawing)) ? product.drawing : undefined,

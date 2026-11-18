@@ -1,0 +1,3195 @@
+[
+  {
+    "id": "mining-spherical-01",
+    "model": "Spherical buttons - geometry 01",
+    "name_en": "Spherical buttons - geometry 01",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Spherical buttons - geometry 01. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/spherical-01-rendering.webp",
+    "drawing": "/images/mining-tools/spherical-01-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        },
+        {
+          "label": "β",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "spherical-01-01",
+          "model": "SQ0802096-E12E05",
+          "values": [
+            "8.02",
+            "9.6",
+            "4.10",
+            "15",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-02",
+          "model": "SQ0951093-E08E05",
+          "values": [
+            "9.51",
+            "9.3",
+            "7.18",
+            "15",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-03",
+          "model": "SQ1005150-H19X08",
+          "values": [
+            "10.05",
+            "15.0",
+            "5.60",
+            "20",
+            "26"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-04",
+          "model": "SQ1110170-H08H16",
+          "values": [
+            "11.10",
+            "17.0",
+            "6.10",
+            "22",
+            "24"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-05",
+          "model": "SQ1206193-H08H16",
+          "values": [
+            "12.06",
+            "19.3",
+            "6.10",
+            "22",
+            "24"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-06",
+          "model": "SQ1300200-H10H12",
+          "values": [
+            "13.00",
+            "20.0",
+            "6.57",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-07",
+          "model": "SQ1400180-X16H18",
+          "values": [
+            "14.00",
+            "18.0",
+            "7.08",
+            "7",
+            "23.5"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-08",
+          "model": "SQ1618210-H10F23",
+          "values": [
+            "16.18",
+            "21.0",
+            "8.25",
+            "20",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-09",
+          "model": "SQ1630210-H20E08",
+          "values": [
+            "16.30",
+            "21.0",
+            "9.00",
+            "25",
+            "16"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-10",
+          "model": "SQ1700260-X12H28",
+          "values": [
+            "17.00",
+            "26.0",
+            "8.70",
+            "20",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-11",
+          "model": "SQ1810280-H22E08",
+          "values": [
+            "18.10",
+            "28.0",
+            "9.25",
+            "25",
+            "16"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-12",
+          "model": "SQ1825280-H14H14",
+          "values": [
+            "18.25",
+            "28.0",
+            "9.00",
+            "20",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-01-13",
+          "model": "SQ1900250-H19H10",
+          "values": [
+            "19.00",
+            "25.0",
+            "9.90",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "spherical",
+      "appearanceName": "Spherical buttons"
+    }
+  },
+  {
+    "id": "mining-spherical-02",
+    "model": "Spherical buttons - geometry 02",
+    "name_en": "Spherical buttons - geometry 02",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Spherical buttons - geometry 02. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/spherical-02-rendering.webp",
+    "drawing": "/images/mining-tools/spherical-02-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "spherical-02-01",
+          "model": "SQ0680140-G05",
+          "values": [
+            "6.80",
+            "14.0",
+            "3.70",
+            "0.50",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-02",
+          "model": "SQ0725111-G10-JG",
+          "values": [
+            "7.25",
+            "11.1",
+            "3.60",
+            "1.00",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-03",
+          "model": "SQ0800085-E10",
+          "values": [
+            "8.00",
+            "8.5",
+            "5.34",
+            "1.00",
+            "18"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-04",
+          "model": "SQ0974086-F10",
+          "values": [
+            "9.74",
+            "8.6",
+            "6.16",
+            "1.00",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-05",
+          "model": "SQ1000180-G15",
+          "values": [
+            "10.00",
+            "18.0",
+            "5.00",
+            "1.50",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-06",
+          "model": "SQ1119143-E11",
+          "values": [
+            "11.19",
+            "14.3",
+            "5.74",
+            "1.14",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-07",
+          "model": "SQ1204180-X12",
+          "values": [
+            "12.04",
+            "18.0",
+            "6.12",
+            "1.20",
+            "70"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-08",
+          "model": "SQ1320190-E18",
+          "values": [
+            "13.20",
+            "19.0",
+            "7.54",
+            "1.80",
+            "18"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-09",
+          "model": "SQ1405249-H17",
+          "values": [
+            "14.05",
+            "24.9",
+            "7.20",
+            "1.78",
+            "70"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-10",
+          "model": "SQ1588240-E25",
+          "values": [
+            "15.88",
+            "24.0",
+            "8.50",
+            "2.50",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-11",
+          "model": "SQ1605270-H20",
+          "values": [
+            "16.05",
+            "27.0",
+            "8.20",
+            "2.06",
+            "70"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-12",
+          "model": "SQ1805282-H24",
+          "values": [
+            "18.05",
+            "28.2",
+            "9.20",
+            "2.42",
+            "70"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-02-13",
+          "model": "SQ2010297-E10",
+          "values": [
+            "20.10",
+            "29.7",
+            "10.50",
+            "1.00",
+            "15"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "spherical",
+      "appearanceName": "Spherical buttons"
+    }
+  },
+  {
+    "id": "mining-spherical-03",
+    "model": "Spherical buttons - geometry 03",
+    "name_en": "Spherical buttons - geometry 03",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Spherical buttons - geometry 03. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/spherical-03-rendering.webp",
+    "drawing": "/images/mining-tools/spherical-03-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "spherical-03-01",
+          "model": "SQ0420050-G40Q",
+          "values": [
+            "4.20",
+            "5.0",
+            "2.30",
+            "0.4",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-03-02",
+          "model": "SQ0790850HQ-F10-JG",
+          "values": [
+            "7.90",
+            "8.5",
+            "4.10",
+            "1.0",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-03-03",
+          "model": "SQ0890940HQ-F10-JG",
+          "values": [
+            "8.90",
+            "9.4",
+            "4.60",
+            "1.0",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-03-04",
+          "model": "SQ0909152Q-G15",
+          "values": [
+            "9.09",
+            "15.2",
+            "4.57",
+            "1.5",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-03-05",
+          "model": "SQ1000149-X07Q",
+          "values": [
+            "10.00",
+            "14.9",
+            "5.05",
+            "0.7",
+            "47"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-03-06",
+          "model": "SQ1209152Q",
+          "values": [
+            "12.09",
+            "15.2",
+            "5.15",
+            "0",
+            "0"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-03-07",
+          "model": "SQ1300135-E13Q",
+          "values": [
+            "13.00",
+            "13.5",
+            "6.70",
+            "1.3",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spherical-03-08",
+          "model": "SQ1400145-E14Q",
+          "values": [
+            "14.00",
+            "14.5",
+            "7.20",
+            "1.4",
+            "15"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "spherical",
+      "appearanceName": "Spherical buttons"
+    }
+  },
+  {
+    "id": "mining-conical-01",
+    "model": "Conical buttons - geometry 01",
+    "name_en": "Conical buttons - geometry 01",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Conical buttons - geometry 01. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/conical-01-rendering.webp",
+    "drawing": "/images/mining-tools/conical-01-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "θ",
+          "unit": "°"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        },
+        {
+          "label": "β",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "conical-01-01",
+          "model": "SZ0643086-E15E02",
+          "values": [
+            "6.43",
+            "8.6",
+            "2.40",
+            "50.5",
+            "15",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-02",
+          "model": "SZ0802108-E17E02",
+          "values": [
+            "8.02",
+            "10.8",
+            "3.20",
+            "40.37",
+            "15",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-03",
+          "model": "SZ0804115-E07E06",
+          "values": [
+            "8.04",
+            "11.5",
+            "3.00",
+            "57.6",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-04",
+          "model": "SZ0810120-E09E06",
+          "values": [
+            "8.10",
+            "12.0",
+            "3.00",
+            "58",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-05",
+          "model": "SZ0910150-H07H09",
+          "values": [
+            "9.10",
+            "15.0",
+            "3.50",
+            "58",
+            "25",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-06",
+          "model": "SZ1004165-H06H09",
+          "values": [
+            "10.04",
+            "16.5",
+            "2.50",
+            "67",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-07",
+          "model": "SZ1215190-X06H14",
+          "values": [
+            "12.15",
+            "19.0",
+            "2.45",
+            "60",
+            "26",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-08",
+          "model": "SZ1225180-H07H12",
+          "values": [
+            "12.25",
+            "18.0",
+            "4.30",
+            "49",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-09",
+          "model": "SZ1315210-H03H15",
+          "values": [
+            "13.15",
+            "21.0",
+            "2.90",
+            "55",
+            "22",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-10",
+          "model": "SZ1415220-H13X09",
+          "values": [
+            "14.15",
+            "22.0",
+            "2.90",
+            "60",
+            "21",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-01-11",
+          "model": "SZ1801270-H11X19",
+          "values": [
+            "18.01",
+            "27.0",
+            "7.34",
+            "54",
+            "20",
+            "20"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "conical",
+      "appearanceName": "Conical buttons"
+    }
+  },
+  {
+    "id": "mining-conical-02",
+    "model": "Conical buttons - geometry 02",
+    "name_en": "Conical buttons - geometry 02",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Conical buttons - geometry 02. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/conical-02-rendering.webp",
+    "drawing": "/images/mining-tools/conical-02-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "θ",
+          "unit": "°"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "conical-02-01",
+          "model": "SZ07091-X11",
+          "values": [
+            "7.00",
+            "9.1",
+            "56",
+            "2.80",
+            "1.1",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-02",
+          "model": "SZ0800115-X14",
+          "values": [
+            "8.00",
+            "11.5",
+            "56",
+            "3.00",
+            "1.4",
+            "60"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-03",
+          "model": "SZ0910125-H12",
+          "values": [
+            "9.10",
+            "12.5",
+            "49",
+            "3.53",
+            "1.2",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-04",
+          "model": "SZ1000111-X15",
+          "values": [
+            "10.00",
+            "11.1",
+            "60",
+            "3.75",
+            "1.5",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-05",
+          "model": "SZ11316-X22-JG",
+          "values": [
+            "11.30",
+            "16.0",
+            "56",
+            "4.00",
+            "2.2",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-06",
+          "model": "SZ1210200-H16",
+          "values": [
+            "12.10",
+            "20.0",
+            "45",
+            "4.80",
+            "1.6",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-07",
+          "model": "SZ1300245-G09",
+          "values": [
+            "13.00",
+            "24.5",
+            "79.6",
+            "2.00",
+            "0.9",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-08",
+          "model": "SZ1440157-E10",
+          "values": [
+            "14.40",
+            "15.7",
+            "60",
+            "5.25",
+            "1.0",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-09",
+          "model": "SZ1600250-G10",
+          "values": [
+            "16.00",
+            "25.0",
+            "70.76",
+            "2.00",
+            "1.0",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-10",
+          "model": "SZ1810250-H16",
+          "values": [
+            "18.10",
+            "25.0",
+            "74",
+            "6.00",
+            "1.6",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-02-11",
+          "model": "SZ1900300-G10",
+          "values": [
+            "19.00",
+            "30.0",
+            "70",
+            "2.00",
+            "1.0",
+            "45"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "conical",
+      "appearanceName": "Conical buttons"
+    }
+  },
+  {
+    "id": "mining-conical-03",
+    "model": "Conical buttons - geometry 03",
+    "name_en": "Conical buttons - geometry 03",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Conical buttons - geometry 03. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/conical-03-rendering.webp",
+    "drawing": "/images/mining-tools/conical-03-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "θ",
+          "unit": "°"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "conical-03-01",
+          "model": "SZ0910125-H12Q",
+          "values": [
+            "9.10",
+            "12.5",
+            "49",
+            "3.53",
+            "1.2",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-02",
+          "model": "SZ11217TZ-E15Q-JQ",
+          "values": [
+            "11.20",
+            "17.0",
+            "56",
+            "4.00",
+            "1.5",
+            "18"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-03",
+          "model": "SZ11218TZ-E15Q-JQ",
+          "values": [
+            "11.20",
+            "18.0",
+            "56",
+            "4.00",
+            "1.5",
+            "18"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-04",
+          "model": "SZ1206180-H08Q",
+          "values": [
+            "12.06",
+            "18.0",
+            "45",
+            "3.80",
+            "0.5",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-05",
+          "model": "SZ1300150-E13Q",
+          "values": [
+            "13.00",
+            "15.0",
+            "63.5",
+            "5.00",
+            "1.3",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-06",
+          "model": "SZ1350195-E14Q",
+          "values": [
+            "13.50",
+            "19.5",
+            "29",
+            "5.50",
+            "1.4",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-07",
+          "model": "SZ1408200-H10Q",
+          "values": [
+            "14.08",
+            "20.0",
+            "45",
+            "5.00",
+            "1.0",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-08",
+          "model": "SZ1466190-H14Q",
+          "values": [
+            "14.66",
+            "19.0",
+            "45",
+            "5.20",
+            "1.4",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-09",
+          "model": "SZ1600290-G07Q",
+          "values": [
+            "16.00",
+            "29.0",
+            "82",
+            "2.00",
+            "0.7",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "conical-03-10",
+          "model": "SZ181826MR-E15Q-JG",
+          "values": [
+            "18.18",
+            "26.0",
+            "54",
+            "1.10",
+            "1.5",
+            "18"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "conical",
+      "appearanceName": "Conical buttons"
+    }
+  },
+  {
+    "id": "mining-parabolic-01",
+    "model": "Parabolic buttons - geometry 01",
+    "name_en": "Parabolic buttons - geometry 01",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Parabolic buttons - geometry 01. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/parabolic-01-rendering.webp",
+    "drawing": "/images/mining-tools/parabolic-01-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "SR1",
+          "unit": "mm"
+        },
+        {
+          "label": "SR2",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        },
+        {
+          "label": "β",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "parabolic-01-01",
+          "model": "SD0810120-H10H05",
+          "values": [
+            "8.10",
+            "12.0",
+            "2.05",
+            "9.70",
+            "21",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-02",
+          "model": "SD0920140-H08H10",
+          "values": [
+            "9.20",
+            "14.0",
+            "3.10",
+            "8.80",
+            "25",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-03",
+          "model": "SD1010160-H06H10",
+          "values": [
+            "10.10",
+            "16.0",
+            "2.85",
+            "7.50",
+            "25",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-04",
+          "model": "SD1110170-H06H10",
+          "values": [
+            "11.10",
+            "17.0",
+            "2.75",
+            "11.00",
+            "25",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-05",
+          "model": "SD1225195-H08H13",
+          "values": [
+            "12.25",
+            "19.5",
+            "3.50",
+            "12.00",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-06",
+          "model": "SD1310210-H04H13",
+          "values": [
+            "13.10",
+            "21.0",
+            "3.75",
+            "13.00",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-07",
+          "model": "SD1410220-H10H18",
+          "values": [
+            "14.10",
+            "22.0",
+            "0.50",
+            "13.41",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-08",
+          "model": "SD1530210-H11H16",
+          "values": [
+            "15.30",
+            "21.0",
+            "5.35",
+            "15.15",
+            "25",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-09",
+          "model": "SD1610260-E10H17",
+          "values": [
+            "16.10",
+            "26.0",
+            "0.50",
+            "18.30",
+            "15",
+            "20"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-10",
+          "model": "SD1815268-H10F26",
+          "values": [
+            "18.15",
+            "26.8",
+            "2.00",
+            "32.00",
+            "20",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-01-11",
+          "model": "SD2215340-H21F24",
+          "values": [
+            "22.15",
+            "34.0",
+            "1.50",
+            "40.00",
+            "25",
+            "30"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "parabolic",
+      "appearanceName": "Parabolic buttons"
+    }
+  },
+  {
+    "id": "mining-parabolic-02",
+    "model": "Parabolic buttons - geometry 02",
+    "name_en": "Parabolic buttons - geometry 02",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Parabolic buttons - geometry 02. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/parabolic-02-rendering.webp",
+    "drawing": "/images/mining-tools/parabolic-02-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "SR1",
+          "unit": "mm"
+        },
+        {
+          "label": "SR2",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "parabolic-02-01",
+          "model": "SD0620090-E07",
+          "values": [
+            "6.20",
+            "9.0",
+            "1.80",
+            "6.55",
+            "0.7",
+            "18"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-02-02",
+          "model": "SD0700100-E06",
+          "values": [
+            "7.00",
+            "10.0",
+            "3.00",
+            "11.00",
+            "0.6",
+            "17"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-02-03",
+          "model": "SD0825120-H06-JG",
+          "values": [
+            "8.25",
+            "12.0",
+            "2.05",
+            "9.70",
+            "0.6",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-02-04",
+          "model": "SD0900100-E16",
+          "values": [
+            "9.00",
+            "10.0",
+            "2.80",
+            "8.10",
+            "1.6",
+            "18"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-02-05",
+          "model": "SD1000210-G05",
+          "values": [
+            "10.00",
+            "21.0",
+            "1.00",
+            "25.00",
+            "0.5",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-02-06",
+          "model": "SD123185JC-X23-JG",
+          "values": [
+            "12.31",
+            "18.5",
+            "2.00",
+            "15.00",
+            "2.3",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-02-07",
+          "model": "SD1415205-X27",
+          "values": [
+            "14.15",
+            "20.5",
+            "4.50",
+            "42.00",
+            "2.7",
+            "25"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-02-08",
+          "model": "SD161823-X28-JG",
+          "values": [
+            "16.18",
+            "8.2",
+            "5.70",
+            "16.14",
+            "2.8",
+            "25"
+          ],
+          "reviewRequired": true,
+          "reviewNote": "The source table prints H = 8.2 mm, which differs from the height suggested by the model code. Confirm both before ordering."
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "parabolic",
+      "appearanceName": "Parabolic buttons"
+    }
+  },
+  {
+    "id": "mining-parabolic-03",
+    "model": "Parabolic buttons - geometry 03",
+    "name_en": "Parabolic buttons - geometry 03",
+    "category_en": "Mining Carbide Buttons",
+    "category_id": "mining-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Parabolic buttons - geometry 03. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/parabolic-03-rendering.webp",
+    "drawing": "/images/mining-tools/parabolic-03-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "SR1",
+          "unit": "mm"
+        },
+        {
+          "label": "SR2",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        }
+      ],
+      "variants": [
+        {
+          "id": "parabolic-03-01",
+          "model": "SD0720100-H07Q",
+          "values": [
+            "7.20",
+            "10.0",
+            "2.80",
+            "8.00",
+            "20",
+            "0.7"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-03-02",
+          "model": "SD0870125-E12Q",
+          "values": [
+            "8.70",
+            "12.5",
+            "3.00",
+            "7.50",
+            "25",
+            "1.2"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-03-03",
+          "model": "SD0920125-E16QK-JG",
+          "values": [
+            "9.20",
+            "12.5",
+            "3.10",
+            "8.80",
+            "15",
+            "1.6"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-03-04",
+          "model": "SD1005120-E15Q-JG",
+          "values": [
+            "10.05",
+            "12.0",
+            "2.70",
+            "10.80",
+            "18",
+            "1.5"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-03-05",
+          "model": "SD1450170-E14Q",
+          "values": [
+            "14.50",
+            "17.0",
+            "4.50",
+            "12.00",
+            "15",
+            "1.4"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-03-06",
+          "model": "SD1630-G07Q",
+          "values": [
+            "16.00",
+            "30.0",
+            "2.00",
+            "25.00",
+            "45",
+            "0.7"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-03-07",
+          "model": "SD1903300-E15Q",
+          "values": [
+            "19.03",
+            "30.0",
+            "4.50",
+            "40.00",
+            "15",
+            "1.5"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "parabolic-03-08",
+          "model": "SD2215270Q-X29",
+          "values": [
+            "22.15",
+            "27.0",
+            "2.70",
+            "29.00",
+            "25",
+            "2.9"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK03G",
+        "JK03M",
+        "JK06G",
+        "JK07G",
+        "JK08",
+        "JK09",
+        "JK25"
+      ],
+      "appearanceId": "parabolic",
+      "appearanceName": "Parabolic buttons"
+    }
+  },
+  {
+    "id": "mining-road-breaking-01",
+    "model": "Road-breaking buttons - geometry 01",
+    "name_en": "Road-breaking buttons - geometry 01",
+    "category_en": "Construction & Coal Mining Buttons",
+    "category_id": "construction-coal-mining-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Road-breaking buttons - geometry 01. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/road-breaking-01-rendering.webp",
+    "drawing": "/images/mining-tools/road-breaking-01-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "d",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "h1",
+          "unit": "mm"
+        },
+        {
+          "label": "h2",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "road-breaking-01-01",
+          "model": "WLC1600135A",
+          "values": [
+            "16.0",
+            "13.5",
+            "17.76",
+            "3.75",
+            "1.5",
+            "82"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "road-breaking-01-02",
+          "model": "WLC1880173Q",
+          "values": [
+            "18.8",
+            "17.3",
+            "17.16",
+            "3.84",
+            "1.6",
+            "82"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "road-breaking-01-03",
+          "model": "WLC2200220",
+          "values": [
+            "22.0",
+            "22.0",
+            "17.16",
+            "3.84",
+            "1.6",
+            "82"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "road-breaking-01-04",
+          "model": "WLC2950275",
+          "values": [
+            "29.5",
+            "27.5",
+            "17.16",
+            "3.84",
+            "1.6",
+            "82"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JL10B",
+        "JL20B",
+        "JL30B",
+        "JL40B",
+        "JL10H",
+        "JL15H",
+        "JL20H"
+      ]
+    }
+  },
+  {
+    "id": "mining-road-breaking-02",
+    "model": "Road-breaking buttons - geometry 02",
+    "name_en": "Road-breaking buttons - geometry 02",
+    "category_en": "Construction & Coal Mining Buttons",
+    "category_id": "construction-coal-mining-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Road-breaking buttons - geometry 02. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/road-breaking-02-rendering.webp",
+    "drawing": "/images/mining-tools/road-breaking-02-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "h1",
+          "unit": "mm"
+        },
+        {
+          "label": "h2",
+          "unit": "mm"
+        },
+        {
+          "label": "α1",
+          "unit": "°"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        }
+      ],
+      "variants": [
+        {
+          "id": "road-breaking-02-01",
+          "model": "WLC1600130Q",
+          "values": [
+            "16.0",
+            "13.0",
+            "2.0",
+            "7.0",
+            "78",
+            "1.0"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "road-breaking-02-02",
+          "model": "WLC2400195Q",
+          "values": [
+            "24.0",
+            "19.5",
+            "4.0",
+            "7.5",
+            "90",
+            "1.5"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JL10B",
+        "JL20B",
+        "JL30B",
+        "JL40B",
+        "JL10H",
+        "JL15H",
+        "JL20H"
+      ]
+    }
+  },
+  {
+    "id": "mining-cement-road",
+    "model": "Cement-road milling buttons",
+    "name_en": "Cement-road milling buttons",
+    "category_en": "Construction & Coal Mining Buttons",
+    "category_id": "construction-coal-mining-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Cement-road milling buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/cement-road-rendering.webp",
+    "drawing": "/images/mining-tools/cement-road-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "h1",
+          "unit": "mm"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "θ",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "cement-road-01",
+          "model": "SZ1300245-G09",
+          "values": [
+            "13.0",
+            "24.5",
+            "18.00",
+            "2.0",
+            "79.6"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "cement-road-02",
+          "model": "SZ1427-SR2-82°",
+          "values": [
+            "14.0",
+            "27.0",
+            "20.00",
+            "2.0",
+            "82.0"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "cement-road-03",
+          "model": "SZ1600290-G07Q",
+          "values": [
+            "16.0",
+            "29.0",
+            "20.85",
+            "2.0",
+            "82.0"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JL10B",
+        "JL20B",
+        "JL30B",
+        "JL40B",
+        "JL10H",
+        "JL15H",
+        "JL20H"
+      ]
+    }
+  },
+  {
+    "id": "mining-rotary-drilling",
+    "model": "Rotary-drilling buttons",
+    "name_en": "Rotary-drilling buttons",
+    "category_en": "Construction & Coal Mining Buttons",
+    "category_id": "construction-coal-mining-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Rotary-drilling buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/rotary-drilling-rendering.webp",
+    "drawing": "/images/mining-tools/rotary-drilling-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "h",
+          "unit": "mm"
+        },
+        {
+          "label": "θ",
+          "unit": "°"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "d",
+          "unit": "mm"
+        }
+      ],
+      "variants": [
+        {
+          "id": "rotary-drilling-01",
+          "model": "JCB210240-158Q",
+          "values": [
+            "21.0",
+            "24.0",
+            "12.50",
+            "25.00",
+            "2.0",
+            "15.8"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "rotary-drilling-02",
+          "model": "JCB240300-200Q",
+          "values": [
+            "24.0",
+            "30.0",
+            "14.58",
+            "34.42",
+            "2.0",
+            "20.0"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "rotary-drilling-03",
+          "model": "JCB255340-205",
+          "values": [
+            "25.5",
+            "34.0",
+            "17.00",
+            "17.20",
+            "2.5",
+            "20.5"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "rotary-drilling-04",
+          "model": "JCB295345-250Q",
+          "values": [
+            "29.5",
+            "34.5",
+            "16.00",
+            "31.42",
+            "3.0",
+            "25.0"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JL10B",
+        "JL20B",
+        "JL30B",
+        "JL40B",
+        "JL10H",
+        "JL15H",
+        "JL20H"
+      ]
+    }
+  },
+  {
+    "id": "mining-mushroom",
+    "model": "Mushroom buttons",
+    "name_en": "Mushroom buttons",
+    "category_en": "Construction & Coal Mining Buttons",
+    "category_id": "construction-coal-mining-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Mushroom buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/mushroom-rendering.webp",
+    "drawing": "/images/mining-tools/mushroom-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "d",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "R",
+          "unit": "mm"
+        },
+        {
+          "label": "h",
+          "unit": "mm"
+        }
+      ],
+      "variants": [
+        {
+          "id": "mushroom-01",
+          "model": "JCB1600220-110",
+          "values": [
+            "16.0",
+            "11.0",
+            "12.50",
+            "2.0",
+            "20.0",
+            "10.53"
+          ],
+          "reviewRequired": true,
+          "reviewNote": "The source H value differs from the height suggested by the model code. The printed table value is retained; confirm before ordering."
+        },
+        {
+          "id": "mushroom-02",
+          "model": "JCB1800240-120",
+          "values": [
+            "18.0",
+            "12.0",
+            "14.58",
+            "1.5",
+            "40.0",
+            "11.70"
+          ],
+          "reviewRequired": true,
+          "reviewNote": "The source H value differs from the height suggested by the model code. The printed table value is retained; confirm before ordering."
+        },
+        {
+          "id": "mushroom-03",
+          "model": "JCB2200240-160",
+          "values": [
+            "22.0",
+            "16.0",
+            "17.00",
+            "1.5",
+            "45.0",
+            "11.00"
+          ],
+          "reviewRequired": true,
+          "reviewNote": "The source H value differs from the height suggested by the model code. The printed table value is retained; confirm before ordering."
+        },
+        {
+          "id": "mushroom-04",
+          "model": "JCB2770350-227Q",
+          "values": [
+            "27.7",
+            "22.7",
+            "16.00",
+            "4.0",
+            "36.0",
+            "18.50"
+          ],
+          "reviewRequired": true,
+          "reviewNote": "The source H value differs from the height suggested by the model code. The printed table value is retained; confirm before ordering."
+        }
+      ],
+      "referenceGrades": [
+        "JL10B",
+        "JL20B",
+        "JL30B",
+        "JL40B",
+        "JL10H",
+        "JL15H",
+        "JL20H"
+      ]
+    }
+  },
+  {
+    "id": "mining-rolling",
+    "model": "Rolling buttons",
+    "name_en": "Rolling buttons",
+    "category_en": "Construction & Coal Mining Buttons",
+    "category_id": "construction-coal-mining-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Rolling buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/rolling-rendering.webp",
+    "drawing": "/images/mining-tools/rolling-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "d",
+          "unit": "mm"
+        },
+        {
+          "label": "h",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "θ",
+          "unit": "°"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "rolling-01",
+          "model": "ZD1635",
+          "values": [
+            "15.9",
+            "35.0",
+            "4.1",
+            "1.0",
+            "45",
+            "3"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "rolling-02",
+          "model": "ZD1645",
+          "values": [
+            "15.9",
+            "45.0",
+            "4.1",
+            "1.0",
+            "45",
+            "3"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "rolling-03",
+          "model": "ZD1650",
+          "values": [
+            "15.9",
+            "50.0",
+            "4.1",
+            "1.0",
+            "45",
+            "3"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "rolling-04",
+          "model": "ZD2235",
+          "values": [
+            "21.9",
+            "35.0",
+            "5.0",
+            "2.0",
+            "45",
+            "3"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "rolling-05",
+          "model": "ZD2245",
+          "values": [
+            "21.9",
+            "45.0",
+            "5.0",
+            "2.0",
+            "45",
+            "3"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "rolling-06",
+          "model": "ZD2270",
+          "values": [
+            "21.9",
+            "70.0",
+            "5.0",
+            "2.0",
+            "45",
+            "3"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JL10B",
+        "JL20B",
+        "JL30B",
+        "JL40B",
+        "JL10H",
+        "JL15H",
+        "JL20H"
+      ],
+      "sourceNote": "The table labels its second column d, while the drawing uses H for height. The printed table headings are retained. Confirm this label and all dimensions before ordering."
+    }
+  },
+  {
+    "id": "mining-eccentric-wedge",
+    "model": "Eccentric wedge buttons",
+    "name_en": "Eccentric wedge buttons",
+    "category_en": "Oilfield Carbide Buttons",
+    "category_id": "oilfield-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Eccentric wedge buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/eccentric-wedge-rendering.webp",
+    "drawing": "/images/mining-tools/eccentric-wedge-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "h",
+          "unit": "mm"
+        },
+        {
+          "label": "θ1",
+          "unit": "°"
+        },
+        {
+          "label": "θ2",
+          "unit": "°"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "eccentric-wedge-01",
+          "model": "SB1025133-F10",
+          "values": [
+            "10.25",
+            "13.3",
+            "7.0",
+            "0",
+            "12",
+            "1.0",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "eccentric-wedge-02",
+          "model": "SB1935240-E22",
+          "values": [
+            "19.35",
+            "24.0",
+            "15.0",
+            "40",
+            "70",
+            "2.2",
+            "18"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "YG8",
+        "YG11C",
+        "YG13C",
+        "YG13",
+        "YG16"
+      ]
+    }
+  },
+  {
+    "id": "mining-flat-top",
+    "model": "Flat-top buttons",
+    "name_en": "Flat-top buttons",
+    "category_en": "Oilfield Carbide Buttons",
+    "category_id": "oilfield-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Flat-top buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/flat-top-rendering.webp",
+    "drawing": "/images/mining-tools/flat-top-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "β",
+          "unit": "°"
+        },
+        {
+          "label": "A",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "flat-top-01",
+          "model": "SPD0675050-H16",
+          "values": [
+            "6.75",
+            "5.0",
+            "1.6",
+            "25",
+            "0.38",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "flat-top-02",
+          "model": "SPD0817066-H20",
+          "values": [
+            "8.17",
+            "6.6",
+            "2.0",
+            "20",
+            "0.38",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "flat-top-03",
+          "model": "SPD0977063-E15",
+          "values": [
+            "9.77",
+            "6.3",
+            "1.5",
+            "15",
+            "1.20",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "flat-top-04",
+          "model": "SP0643059-E14E03",
+          "values": [
+            "6.43",
+            "5.9",
+            "1.7",
+            "15",
+            "0.60",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "flat-top-05",
+          "model": "SP0812057-E10Q",
+          "values": [
+            "8.12",
+            "5.7",
+            "1.0",
+            "15",
+            "0.50",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "flat-top-06",
+          "model": "SP1000080-E10",
+          "values": [
+            "10.00",
+            "8.0",
+            "1.0",
+            "18",
+            "0.50",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "flat-top-07",
+          "model": "SP1220097-X10",
+          "values": [
+            "12.20",
+            "9.7",
+            "1.0",
+            "18",
+            "0.50",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "flat-top-08",
+          "model": "SP1420100-X10-JG",
+          "values": [
+            "14.20",
+            "10.0",
+            "1.0",
+            "18",
+            "0.50",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "flat-top-09",
+          "model": "SP1520100-X10",
+          "values": [
+            "15.20",
+            "10.0",
+            "1.0",
+            "15",
+            "0.50",
+            "45"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "YG8",
+        "YG11C",
+        "YG13C",
+        "YG13",
+        "YG16"
+      ]
+    }
+  },
+  {
+    "id": "mining-spoon",
+    "model": "Spoon buttons",
+    "name_en": "Spoon buttons",
+    "category_en": "Oilfield Carbide Buttons",
+    "category_id": "oilfield-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Spoon buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/spoon-rendering.webp",
+    "drawing": "/images/mining-tools/spoon-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "h",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        },
+        {
+          "label": "SRa",
+          "unit": "mm"
+        },
+        {
+          "label": "SRb",
+          "unit": "mm"
+        },
+        {
+          "label": "SRc",
+          "unit": "mm"
+        },
+        {
+          "label": "θ",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "spoon-01",
+          "model": "SS1414217-E10",
+          "values": [
+            "14.14",
+            "21.7",
+            "9.9",
+            "1.0",
+            "15",
+            "15.0",
+            "23.0",
+            "2.5",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spoon-02",
+          "model": "SS1440217-E12",
+          "values": [
+            "14.40",
+            "21.7",
+            "11.9",
+            "2.0",
+            "18",
+            "15.0",
+            "23.0",
+            "2.5",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spoon-03",
+          "model": "SS1635242B-E12",
+          "values": [
+            "16.35",
+            "24.2",
+            "12.8",
+            "1.2",
+            "15",
+            "15.0",
+            "24.0",
+            "2.3",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "spoon-04",
+          "model": "SS1935300-E20",
+          "values": [
+            "19.35",
+            "30.0",
+            "17.0",
+            "2.0",
+            "18",
+            "16.0",
+            "25.0",
+            "3.0",
+            "30"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "YG8",
+        "YG11C",
+        "YG13C",
+        "YG13",
+        "YG16"
+      ]
+    }
+  },
+  {
+    "id": "mining-wedge",
+    "model": "Wedge buttons",
+    "name_en": "Wedge buttons",
+    "category_en": "Oilfield Carbide Buttons",
+    "category_id": "oilfield-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Wedge buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/wedge-rendering.webp",
+    "drawing": "/images/mining-tools/wedge-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "h",
+          "unit": "mm"
+        },
+        {
+          "label": "θ1",
+          "unit": "°"
+        },
+        {
+          "label": "θ2",
+          "unit": "°"
+        },
+        {
+          "label": "SR",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "wedge-01",
+          "model": "SX0420060-G04",
+          "values": [
+            "4.20",
+            "6.0",
+            "3.70",
+            "0",
+            "90",
+            "8.00",
+            "0.40",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "wedge-02",
+          "model": "SX0501060-E05",
+          "values": [
+            "5.10",
+            "6.0",
+            "2.50",
+            "68",
+            "40",
+            "2.20",
+            "0.50",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "wedge-03",
+          "model": "SX0620080-G04",
+          "values": [
+            "6.20",
+            "8.0",
+            "4.80",
+            "0",
+            "90",
+            "0.50",
+            "0.40",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "wedge-04",
+          "model": "SX0802122-E12E05",
+          "values": [
+            "8.02",
+            "12.2",
+            "5.11",
+            "42.42",
+            "30",
+            "2.00",
+            "1.70",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "wedge-05",
+          "model": "SX1114157-E08",
+          "values": [
+            "11.14",
+            "15.7",
+            "8.10",
+            "40",
+            "60",
+            "2.90",
+            "0.80",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "wedge-06",
+          "model": "SX1314187-E12",
+          "values": [
+            "13.14",
+            "18.7",
+            "9.50",
+            "40",
+            "60",
+            "3.45",
+            "1.20",
+            "15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "wedge-07",
+          "model": "SX1400230-G15",
+          "values": [
+            "14.00",
+            "23.0",
+            "12.73",
+            "0",
+            "60",
+            "3.00",
+            "1.50",
+            "45"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "wedge-08",
+          "model": "SX1500250-G20",
+          "values": [
+            "15.00",
+            "25.0",
+            "12.20",
+            "0",
+            "60",
+            "3.00",
+            "2.00",
+            "45"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "YG8",
+        "YG11C",
+        "YG13C",
+        "YG13",
+        "YG16"
+      ]
+    }
+  },
+  {
+    "id": "mining-pointed",
+    "model": "Pointed buttons",
+    "name_en": "Pointed buttons",
+    "category_en": "Oilfield Carbide Buttons",
+    "category_id": "oilfield-carbide-buttons",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Pointed buttons. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/pointed-rendering.webp",
+    "drawing": "/images/mining-tools/pointed-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        },
+        {
+          "label": "h",
+          "unit": "mm"
+        },
+        {
+          "label": "SR1",
+          "unit": "mm"
+        },
+        {
+          "label": "SR2",
+          "unit": "mm"
+        },
+        {
+          "label": "R3",
+          "unit": "mm"
+        },
+        {
+          "label": "e",
+          "unit": "mm"
+        },
+        {
+          "label": "α",
+          "unit": "°"
+        }
+      ],
+      "variants": [
+        {
+          "id": "pointed-01",
+          "model": "SF1435200-F07",
+          "values": [
+            "14.35",
+            "20.0",
+            "10.0",
+            "12.0",
+            "2.0",
+            "14.0",
+            "0.7",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pointed-02",
+          "model": "SF1635210-F07",
+          "values": [
+            "16.35",
+            "21.0",
+            "10.0",
+            "14.0",
+            "2.5",
+            "16.0",
+            "0.7",
+            "30"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pointed-03",
+          "model": "SF1635250A-F07",
+          "values": [
+            "16.35",
+            "25.0",
+            "12.5",
+            "16.0",
+            "2.5",
+            "18.0",
+            "0.7",
+            "30"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "YG8",
+        "YG11C",
+        "YG13C",
+        "YG13",
+        "YG16"
+      ]
+    }
+  },
+  {
+    "id": "mining-pdc-mining",
+    "model": "PDC substrates for mining",
+    "name_en": "PDC substrates for mining",
+    "category_en": "PDC Substrates",
+    "category_id": "pdc-substrates",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "PDC substrates for mining. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/pdc-mining-rendering.webp",
+    "drawing": "/images/mining-tools/pdc-mining-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        }
+      ],
+      "variants": [
+        {
+          "id": "pdc-mining-01",
+          "model": "ZF10112004-3.5",
+          "values": [
+            "11.2",
+            "3.5"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pdc-mining-02",
+          "model": "ZF13144024-4.0",
+          "values": [
+            "14.4",
+            "4.0"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pdc-mining-03",
+          "model": "ZF13148008-7.4",
+          "values": [
+            "14.8",
+            "7.4"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pdc-mining-04",
+          "model": "ZF13146015-7.2",
+          "values": [
+            "14.6",
+            "7.2"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK16G",
+        "JK13G",
+        "YG13",
+        "YG16"
+      ]
+    }
+  },
+  {
+    "id": "mining-pdc-oilfield",
+    "model": "PDC substrates for oilfield applications",
+    "name_en": "PDC substrates for oilfield applications",
+    "category_en": "PDC Substrates",
+    "category_id": "pdc-substrates",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "PDC substrates for oilfield applications. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/pdc-oilfield-rendering.webp",
+    "drawing": "/images/mining-tools/pdc-oilfield-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        }
+      ],
+      "variants": [
+        {
+          "id": "pdc-oilfield-01",
+          "model": "ZF16176002-15.4",
+          "values": [
+            "17.6",
+            "15.4"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pdc-oilfield-02",
+          "model": "ZF16188005-12.0",
+          "values": [
+            "18.8",
+            "12.0"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pdc-oilfield-03",
+          "model": "ZF16178010-7.0",
+          "values": [
+            "11.2",
+            "3.5"
+          ],
+          "reviewRequired": true,
+          "reviewNote": "The source table prints D = 11.2 mm and H = 3.5 mm alongside this model code. Confirm the code and dimensions together."
+        },
+        {
+          "id": "pdc-oilfield-04",
+          "model": "ZF16173015-7.5",
+          "values": [
+            "14.4",
+            "4.0"
+          ],
+          "reviewRequired": true,
+          "reviewNote": "The source table prints D = 14.4 mm and H = 4.0 mm alongside this model code. Confirm the code and dimensions together."
+        }
+      ],
+      "referenceGrades": [
+        "JK16G",
+        "JK13G",
+        "YG13",
+        "YG16"
+      ]
+    }
+  },
+  {
+    "id": "mining-pdc-blade",
+    "model": "Composite blade substrates",
+    "name_en": "Composite blade substrates",
+    "category_en": "PDC Substrates",
+    "category_id": "pdc-substrates",
+    "category_parent_en": "Mining & Construction Tools",
+    "category_parent_id": "mining-construction-tools",
+    "status": "approved",
+    "description_en": "Composite blade substrates. Select an exact catalog model and review the dimension drawing. Grade, fit and availability require individual confirmation.",
+    "material": "Cemented carbide",
+    "specs": [],
+    "grades": [],
+    "image": "/images/mining-tools/pdc-blade-rendering.webp",
+    "drawing": "/images/mining-tools/pdc-blade-drawing.webp",
+    "mining_tool": {
+      "columns": [
+        {
+          "label": "D",
+          "unit": "mm"
+        },
+        {
+          "label": "H",
+          "unit": "mm"
+        }
+      ],
+      "variants": [
+        {
+          "id": "pdc-blade-01",
+          "model": "DF3310-3.1",
+          "values": [
+            "33.1",
+            "3.1"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pdc-blade-02",
+          "model": "DF5720-3.1",
+          "values": [
+            "57.2",
+            "3.1"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pdc-blade-03",
+          "model": "DF5180-3.15",
+          "values": [
+            "51.8",
+            "3.15"
+          ],
+          "reviewRequired": false
+        },
+        {
+          "id": "pdc-blade-04",
+          "model": "DF6160-3.5",
+          "values": [
+            "61.6",
+            "3.5"
+          ],
+          "reviewRequired": false
+        }
+      ],
+      "referenceGrades": [
+        "JK16G",
+        "JK13G",
+        "YG13",
+        "YG16"
+      ]
+    }
+  }
+]

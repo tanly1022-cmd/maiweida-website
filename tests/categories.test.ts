@@ -4,22 +4,22 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
-import { normalizeCatalog, normalizeCategories, populatedCategories, filterProducts } from "../lib/catalog-core";
+import { groupProducts, normalizeCatalog, normalizeCategories, populatedCategories, filterProducts } from "../lib/catalog-core";
 import { CategorySidebar } from "../components/category-sidebar";
 const read = (file: string) => JSON.parse(readFileSync(file, "utf8"));
 const source = read("data/products.json");
 const manifest = read("category-mapping-manifest.json");
 const insertSource = source.filter((row: { id: string }) => row.id.startsWith("mwd-insert-"));
 const categories = normalizeCategories(read("data/categories.json"));
-const products = normalizeCatalog([...source, ...read("data/end-mills.json")], categories);
+const products = normalizeCatalog([...source, ...read("data/end-mills.json"), ...read("data/mining-tools.json")], categories);
 const navigation = populatedCategories(categories, products);
 test("taxonomy retains original parents plus end mills in order and a two-level English tree", () => {
-  assert.deepEqual(categories.map(p => p.name), ["Turning Tools", "Milling Tools", "Solid Carbide End Mills", "Boring Tools", "Drilling Tools", "CNC Inserts", "Tooling Systems", "Accessories"]);
+  assert.deepEqual(categories.map(p => p.name), ["Turning Tools", "Milling Tools", "Solid Carbide End Mills", "Boring Tools", "Drilling Tools", "CNC Inserts", "Tooling Systems", "Accessories", "Mining & Construction Tools"]);
   assert.doesNotMatch(JSON.stringify(categories), /[\u3400-\u9fff]/u);
   assert.equal(categories[0].children.length, 14);
   assert.equal(categories[1].children.length, 9);
   for (const parent of categories) {
-    if (parent.id !== "solid-carbide-end-mills") assert.ok(parent.children.some(child => child.name === `Other ${parent.name}`));
+    if (!["solid-carbide-end-mills", "mining-construction-tools"].includes(parent.id)) assert.ok(parent.children.some(child => child.name === `Other ${parent.name}`));
     for (const child of parent.children) assert.ok(!("children" in child));
   }
 });
@@ -58,15 +58,17 @@ test("duplicate prefixes are disambiguated by saved catalog section rather than 
   assert.equal(products.find(p => p.id === "mwd-p012-family-02")?.category, "P style external turning toolholders");
 });
 test("parent and child filters partition the catalog, retaining only explicitly pending empty categories", () => {
-  assert.equal(navigation.reduce((sum, p) => sum + p.count, 0), products.length);
+  assert.equal(navigation.reduce((sum, p) => sum + p.count, 0), products.length - 6);
+  assert.equal(navigation.find(p => p.id === "mining-construction-tools")?.count, 17);
+  const displayedCount = (items: typeof products) => items.some(p => p.miningTool) ? groupProducts(items).length : items.length;
   assert.equal(navigation.find(p => p.name === "CNC Inserts")?.count, 537);
   for (const parent of navigation) {
     assert.ok(parent.count > 0 || parent.showWhenEmpty);
-    assert.equal(parent.count, filterProducts(products, "", parent.name).length);
-    assert.equal(parent.count, filterProducts(products, "", parent.id).length);
+    assert.equal(parent.count, displayedCount(filterProducts(products, "", parent.name)));
+    assert.equal(parent.count, displayedCount(filterProducts(products, "", parent.id)));
     for (const child of parent.children) {
       assert.ok(child.count > 0 || child.showWhenEmpty);
-      assert.equal(child.count, filterProducts(products, "", child.name).length);
+      assert.equal(child.count, displayedCount(filterProducts(products, "", child.name)));
     }
   }
   assert.ok(filterProducts(products, "PCBNR/L", "Turning Tools").length > 0);
@@ -103,7 +105,7 @@ test("selected insert family expands automatically without showing empty pending
 });
 
 test("only populated parent categories are visible and empty boring tools stay hidden", () => {
-  assert.deepEqual(navigation.map(p => p.name), ["Turning Tools", "Milling Tools", "Solid Carbide End Mills", "Drilling Tools", "CNC Inserts", "Tooling Systems"]);
+  assert.deepEqual(navigation.map(p => p.name), ["Turning Tools", "Milling Tools", "Solid Carbide End Mills", "Drilling Tools", "CNC Inserts", "Tooling Systems", "Mining & Construction Tools"]);
   assert.equal(navigation.find(p => p.id === "boring-tools"), undefined);
   assert.ok(categories.some(p => p.id === "boring-tools"));
 });

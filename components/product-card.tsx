@@ -1,15 +1,16 @@
-﻿"use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useState, type ChangeEvent } from "react";
 import { gradeLabel } from "@/lib/insert-options";
-import type { Product } from "@/lib/catalog-core";
+import { miningAppearanceTitle, type Product } from "@/lib/catalog-core";
 import { Arrow } from "./ui";
 
 export function ProductImage({ product, large = false }: { product: Product; large?: boolean }) {
   return <div className={`product-image relative ${large ? "aspect-square" : "aspect-[4/3]"}`}>
-    <Image src={product.image ?? (product.endMill ? product.drawing : undefined) ?? "/images/product-placeholder.svg"} alt={product.image ? (product.insertSeries ? `Catalog photograph of ${product.insertSeries} insert` : product.endMill ? `Catalog photograph of ${product.model} end mill; representative configuration` : `Catalog family photograph for ${product.model}; representative configuration`) : `Replaceable schematic placeholder for ${product.model}; not a product photograph`} fill sizes={large ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"} className={product.endMill && product.image ? "object-scale-down p-7" : "object-contain p-7"} loading="lazy" unoptimized />
+    <Image src={product.image ?? (product.endMill ? product.drawing : undefined) ?? "/images/product-placeholder.svg"} alt={product.miningTool ? `Catalog rendering of ${product.model}; not a photograph` : product.image ? (product.insertSeries ? `Catalog photograph of ${product.insertSeries} insert` : product.endMill ? `Catalog photograph of ${product.model} end mill; representative configuration` : `Catalog family photograph for ${product.model}; representative configuration`) : `Replaceable schematic placeholder for ${product.model}; not a product photograph`} fill sizes={large ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"} className={(product.endMill || product.miningTool) && product.image ? "object-scale-down p-7" : "object-contain p-7"} loading="lazy" unoptimized />
+    {product.miningTool && <span className="absolute bottom-3 left-4 right-4 text-[9px] uppercase tracking-[.1em] text-muted">Catalog rendering / not a photograph</span>}
     {!product.image && <span className="absolute bottom-3 left-4 text-[9px] uppercase tracking-[.15em] text-muted">{product.endMill ? "Geometry schematic / not a photograph" : "Illustration / image placeholder"}</span>}
   </div>;
 }
@@ -31,6 +32,7 @@ function GradeOptions({ product }: { product: Product }) {
 }
 
 export function ProductCard({ product, variants = [product] }: { product: Product; variants?: Product[] }) {
+  if (product.miningTool) return <MiningToolCard product={product} variants={variants} />;
   if (product.endMill) return <EndMillCard product={product} />;
   if (product.insertFamily) return <InsertCard product={product} variants={variants} />;
   const grouped = variants.length > 1;
@@ -110,6 +112,25 @@ function EndMillCard({ product }: { product: Product }) {
         <div><dt className="inline text-muted">Catalog options </dt><dd className="inline">{series.variants.length} model / dimension combinations</dd></div>
       </dl>
       <Link href={`/products/${product.id}`} className="mt-6 flex items-center justify-between gap-3 border-t border-line pt-5 text-xs font-semibold text-steel">Select model & dimensions <Arrow diagonal /></Link>
+    </div>
+  </article>;
+}
+
+function MiningToolCard({ product, variants }: { product: Product; variants: Product[] }) {
+  const title = miningAppearanceTitle(product);
+  const options = variants.flatMap(p => p.miningTool?.variants ?? []);
+  const diameters = options.map(v => Number(v.values[0]));
+  return <article className="product-card flex min-w-0 flex-col border border-line bg-white">
+    <Link href={`/products/${product.id}`} className="block border-b border-line" aria-label={`View ${title}`}><ProductImage product={product} /></Link>
+    <div className="flex flex-1 flex-col p-6">
+      <p className="text-[10px] font-semibold tracking-wider text-muted">{product.category}</p>
+      <h3 className="mt-3 text-lg"><Link href={`/products/${product.id}`} className="hover:underline underline-offset-4">{title}</Link></h3>
+      <dl className="mt-5 space-y-2 text-xs leading-6">
+        <div><dt className="inline text-muted">Diameter D </dt><dd className="inline">{Math.min(...diameters)}–{Math.max(...diameters)} mm</dd></div>
+        <div><dt className="inline text-muted">Catalog options </dt><dd className="inline">{options.length} model / dimension combinations</dd></div>
+        {variants.length > 1 && <div><dt className="inline text-muted">Structure options </dt><dd className="inline">{variants.length} geometries in one appearance</dd></div>}
+      </dl>
+      <Link href={`/products/${product.id}`} className="mt-auto flex items-center justify-between gap-3 border-t border-line pt-5 text-xs font-semibold text-steel" style={{ marginTop: "1.5rem" }}>Select model & dimensions <Arrow diagonal /></Link>
     </div>
   </article>;
 }

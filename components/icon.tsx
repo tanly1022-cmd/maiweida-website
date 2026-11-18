@@ -32,6 +32,6 @@ export function Icon({ name, className = "" }: { name: IconName; className?: str
 
 const categoryIcons: Record<string, IconName> = {
   "turning-tools": "turning", "milling-tools": "milling", "solid-carbide-end-mills": "milling", "boring-tools": "boring",
-  "drilling-tools": "drilling", "cnc-inserts": "insert", "tooling-systems": "tooling", accessories: "accessories",
+  "mining-construction-tools": "drilling", "drilling-tools": "drilling", "cnc-inserts": "insert", "tooling-systems": "tooling", accessories: "accessories",
 };
 export function categoryIcon(id: string): IconName { return categoryIcons[id] ?? "catalog"; }

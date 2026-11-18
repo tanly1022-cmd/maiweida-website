@@ -228,5 +228,27 @@
         "name": "Other Accessories"
       }
     ]
+  },
+  {
+    "id": "mining-construction-tools",
+    "name": "Mining & Construction Tools",
+    "children": [
+      {
+        "id": "mining-carbide-buttons",
+        "name": "Mining Carbide Buttons"
+      },
+      {
+        "id": "construction-coal-mining-buttons",
+        "name": "Construction & Coal Mining Buttons"
+      },
+      {
+        "id": "oilfield-carbide-buttons",
+        "name": "Oilfield Carbide Buttons"
+      },
+      {
+        "id": "pdc-substrates",
+        "name": "PDC Substrates"
+      }
+    ]
   }
 ]

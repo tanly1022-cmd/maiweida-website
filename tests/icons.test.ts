@@ -27,7 +27,7 @@ test("shared icons use a consistent stroke and stay outside the accessibility tr
 
 test("all catalog parent types have tool-specific icons with a safe generic fallback", () => {
   const parents = JSON.parse(readFileSync("data/categories.json", "utf8")) as { id: string }[];
-  assert.deepEqual(parents.map(parent => categoryIcon(parent.id)), ["turning", "milling", "milling", "boring", "drilling", "insert", "tooling", "accessories"]);
+  assert.deepEqual(parents.map(parent => categoryIcon(parent.id)), ["turning", "milling", "milling", "boring", "drilling", "insert", "tooling", "accessories", "drilling"]);
   assert.equal(categoryIcon("future-category"), "catalog");
 });
 

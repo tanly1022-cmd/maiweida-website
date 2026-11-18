@@ -32,6 +32,8 @@ export function CatalogView({ products, categories, params = new URLSearchParams
   const categoryPending = available.some(item => item.name === category && item.count === 0);
   const endMillCategory = categories.find(parent => parent.id === "solid-carbide-end-mills");
   const showEndMills = category === endMillCategory?.name || !!endMillCategory?.children.some(child => child.name === category);
+  const miningCategory = categories.find(parent => parent.id === "mining-construction-tools");
+  const showMining = category === miningCategory?.name || !!miningCategory?.children.some(child => child.name === category);
   const resultGroups = groupProducts(results);
   const maxPage = Math.max(1, Math.ceil(resultGroups.length / PAGE_SIZE));
   const page = Math.min(maxPage, Math.max(1, Math.trunc(Number(params.get("page")) || 1)));
@@ -83,7 +85,7 @@ export function CatalogView({ products, categories, params = new URLSearchParams
             <div>
               <h2 className="text-xl">{query ? `Results for "${query}"` : "Catalog references"}</h2>
               <p className="mt-3 text-xs text-muted" role="status">
-                {resultGroups.length ? (showEndMills ? `${firstShown}-${lastShown} of ${resultGroups.length} series - ${results.reduce((sum, p) => sum + (p.endMill?.variants.length ?? 0), 0)} catalog options` : `${firstShown}-${lastShown} of ${resultGroups.length} image groups - ${results.length} model references`) : "No model-level references found"}
+                {resultGroups.length ? ((showEndMills || showMining) ? `${firstShown}-${lastShown} of ${resultGroups.length} ${showMining ? "appearances" : "series"} - ${results.reduce((sum, p) => sum + (p.endMill?.variants.length ?? p.miningTool?.variants.length ?? 0), 0)} catalog options` : `${firstShown}-${lastShown} of ${resultGroups.length} image groups - ${results.length} model references`) : "No model-level references found"}
               </p>
             </div>
             {(category || query) && <Link href="/products#results" className="text-xs underline underline-offset-4">Clear filters</Link>}
@@ -91,6 +93,7 @@ export function CatalogView({ products, categories, params = new URLSearchParams
 
           {category && <p className="mb-5 inline-block max-w-full border border-line bg-paper px-3 py-2 text-[10px] break-anywhere">{category}</p>}
           {showEndMills && <p className="mb-6 max-w-3xl text-sm leading-7 text-muted">Browse square, ball nose, corner radius and aluminum end mills. Open a series to select an exact catalog model and compare diameter, radius, flute length and shank dimensions. Catalog photographs show a representative tool for each series; dimensions vary by selected model.</p>}
+          {showMining && <p className="mb-6 max-w-3xl text-sm leading-7 text-muted">Browse mining, construction and oilfield carbide buttons, plus PDC substrates. Each shared appearance is shown once. Open a product to choose its geometry and exact catalog model; the corresponding drawing and dimensions stay together. Images are catalog renderings, not product photographs. Section grade references require model-specific confirmation.</p>}
           {shown.length ? <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
             {shown.map(group => <ProductCard key={group.key} product={group.product} variants={group.variants} />)}
           </div> : <div className="border border-line bg-paper px-7 py-14">
