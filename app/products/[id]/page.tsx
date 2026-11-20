@@ -13,6 +13,7 @@ import { getProduct, products } from "@/lib/catalog";
 import { jsonLdString, miningAppearanceProducts, miningAppearanceTitle } from "@/lib/catalog-core";
 import { absoluteUrl, rfqHref } from "@/lib/site";
 import { canonicalUrl, productMetadata, productPath } from "@/lib/seo";
+import { END_MILL_FAMILIES, END_MILLS_PATH, endMillHeading, endMillSummary } from "@/lib/end-mill-catalog";
 type Props = { params: Promise<{ id: string }> };
 export const dynamicParams = false;
 export const revalidate = false;
@@ -25,15 +26,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function ProductDetail({ params }: Props) {
   const { id } = await params, product = getProduct(id);
   if (!product) notFound();
+  const heading = product.endMill ? endMillHeading(product) : product.model;
+  const summary = endMillSummary(product);
+  const endMillFamily = END_MILL_FAMILIES.find(family => family.id === product.categoryId);
   const variants = product.insertFamily ? products.filter(item => item.insertFamily === product.insertFamily) : [product];
-  const schema = { "@context": "https://schema.org", "@type": "Product", name: product.model, model: product.model, description: product.description,
+  const schema = { "@context": "https://schema.org", "@type": "Product", name: heading, model: product.model, description: product.description,
+    ...(summary ? { material: product.material, additionalProperty: [
+      { "@type": "PropertyValue", name: "Catalog cutting diameter range", value: summary.diameter, unitText: "mm" },
+      { "@type": "PropertyValue", name: "Flutes", value: summary.flutes },
+      { "@type": "PropertyValue", name: "Catalog dimension combinations", value: summary.options },
+    ] } : {}),
     ...(product.category ? { category: product.category } : {}),
     ...(product.image && absoluteUrl(product.image) ? { image: absoluteUrl(product.image) } : {}),
     url: canonicalUrl(productPath(product.id)) };
   return <>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdString(schema) }} />
     <Container>
-      <Breadcrumbs items={[{ label: "Products", href: "/products" }, ...(product.category ? [{ label: product.category, href: `/products?category=${encodeURIComponent(product.category)}` }] : []), { label: product.miningTool ? miningAppearanceTitle(product) : product.model }]} />
+      <Breadcrumbs items={[{ label: "Products", href: "/products/" }, ...(product.endMill ? [{ label: "Solid Carbide End Mills", href: END_MILLS_PATH }, ...(endMillFamily ? [{ label: endMillFamily.title, href: `${END_MILLS_PATH}#${endMillFamily.id}` }] : [])] : product.category ? [{ label: product.category, href: `/products?category=${encodeURIComponent(product.category)}` }] : []), { label: product.miningTool ? miningAppearanceTitle(product) : product.model }]} />
       {product.miningTool ? <MiningToolDetail key={product.id} product={product} geometries={miningAppearanceProducts(product, products)} /> : <>
       <section aria-label="Product enquiry" className="grid gap-9 pb-16 md:grid-cols-[1.2fr_1fr] lg:gap-16 lg:pb-24">
         <div className="min-w-0">
@@ -43,7 +52,7 @@ export default async function ProductDetail({ params }: Props) {
         <div className="min-w-0 self-center border-t border-line py-8 md:border-t-0 md:py-12">
           <Eyebrow>{product.isFamilyReference ? "Family reference" : "Catalog model"}</Eyebrow>
           <p className="mt-7 text-xs font-medium text-muted">{product.miningTool ? "Product series" : "Model number"}</p>
-          <h1 className="mt-3 break-anywhere text-4xl leading-tight lg:text-5xl">{product.model}</h1>
+          <h1 className="mt-3 break-anywhere text-4xl leading-tight lg:text-5xl">{heading}</h1>
           <p className="mt-6 max-w-md text-sm leading-7 text-muted">{product.description}</p>
           {product.endMill && <EndMillOptions key={product.id} product={product} />}
           {product.insertFamily && <InsertOptions key={product.id} product={product} variants={variants} />}

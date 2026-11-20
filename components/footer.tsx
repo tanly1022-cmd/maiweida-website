@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { Container } from "./ui";
 import { ContactLinks } from "./contact-links";
 import { Icon } from "./icon";
+import { END_MILLS_PATH } from "@/lib/end-mill-catalog";
 
 export function Footer() {
   return <footer className="border-t border-line bg-white">
@@ -15,6 +16,7 @@ export function Footer() {
         <h2 className="footer-heading">Explore</h2>
         <ul className="footer-links">
           <li><Link href="/products" className="icon-label inline-flex min-h-9 items-center gap-2"><Icon name="catalog" />Product catalog</Link></li>
+          <li><Link href={END_MILLS_PATH} className="icon-label inline-flex min-h-9 items-center gap-2"><Icon name="milling" />Solid carbide end mills</Link></li>
           <li><Link href="/industries" className="icon-label inline-flex min-h-9 items-center gap-2"><Icon name="industry" />Industries</Link></li>
           <li><Link href="/about" className="icon-label inline-flex min-h-9 items-center gap-2"><Icon name="about" />About MAIVIDA</Link></li>
         </ul>

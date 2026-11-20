@@ -1,10 +1,22 @@
 import type { Product } from "@/lib/catalog-core";
+import { endMillSummary } from "@/lib/end-mill-catalog";
 
 export function EndMillSpecifications({ product }: { product: Product }) {
   if (!product.endMill) return null;
+  const summary = endMillSummary(product);
   return <section aria-labelledby="end-mill-specifications" className="mb-16 border-t border-line pt-9">
     <p className="text-xs uppercase tracking-widest text-muted">Catalog dimensions</p>
     <h2 id="end-mill-specifications" className="mt-4 text-2xl md:text-3xl">{product.model} — model specifications</h2>
+    {summary && <dl className="mt-6 grid gap-px border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        ["Cutting diameter D", `${summary.diameter} mm`],
+        ["Flute length H", `${summary.fluteLength} mm`],
+        ["Overall length L", `${summary.overallLength} mm`],
+        ["Shank diameter d", `${summary.shankDiameter} mm`],
+        ["Flutes", summary.flutes],
+        ["Catalog combinations", String(summary.options)],
+      ].map(([label, value]) => <div key={label} className="bg-paper p-4"><dt className="text-xs text-muted">{label}</dt><dd className="mt-2 text-sm font-semibold">{value}</dd></div>)}
+    </dl>}
     <p className="mt-4 text-sm leading-7 text-muted">Each row is a catalog combination, not an independently generated size. D = cutting diameter; R = tip or corner radius; H = flute length; L = overall length; d = shank diameter. All dimensions in mm.</p>
     <div role="region" aria-label={`${product.model} dimensions, scroll horizontally on small screens`} tabIndex={0} className="mt-7 overflow-x-auto border border-line">
       <table className="spec-table min-w-[780px]">

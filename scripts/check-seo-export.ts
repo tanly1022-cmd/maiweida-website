@@ -3,7 +3,8 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 import { normalizeCatalog, normalizeCategories } from "../lib/catalog-core";
 import { canonicalUrl, configuredGoogleVerification, productPath, STATIC_PAGE_PATHS } from "../lib/seo";
-import { absoluteUrl, siteOrigin } from "../lib/site";
+import { absoluteUrl, site, siteOrigin } from "../lib/site";
+import { whatsappContact } from "../lib/whatsapp";
 
 const root="out";
 assert.ok(existsSync(root),"Run npm run build first.");
@@ -11,7 +12,7 @@ const read=(path:string)=>readFileSync(path,"utf8");
 const readJson=(path:string)=>JSON.parse(read(path).replace(/^\uFEFF/,""));
 const categories=normalizeCategories(readJson("data/categories.json"));
 // Match lib/catalog.ts's public-route eligibility and physical-image checks.
-const products=normalizeCatalog(readJson("data/products.json"),categories).map(product=>({
+const products=normalizeCatalog([...readJson("data/products.json"), ...readJson("data/end-mills.json"), ...readJson("data/mining-tools.json")],categories).map(product=>({
   ...product, image:product.image && existsSync(join("public",product.image)) ? product.image : undefined,
 })).filter(product=>!product.isFamilyReference || !!product.image);
 const expected=new Map<string,string>([
@@ -70,6 +71,27 @@ assert.equal(staticDescriptions.size,STATIC_PAGE_PATHS.length,"Static page descr
 // Existing catalog rows can refer to the same model. Do not invent differences,
 // delete URLs or consolidate canonicals without reviewing the product data.
 const duplicateSnippets=[...snippetPages.values()].filter(pages=>pages.length>1);
+const endMillDescriptions=products.filter(product=>product.endMill).map(product=>{
+  const html=read(join(root,decodeURIComponent(productPath(product.id)),"index.html"));
+  return (html.match(/<meta\b[^>]*>/g)??[]).find(tag=>attr(tag,"name")==="description");
+});
+assert.equal(new Set(endMillDescriptions).size,endMillDescriptions.length,"End mill series must have distinct descriptions.");
+const endMillCatalog=read(join(root,"solid-carbide-end-mills/index.html"));
+for(const product of products.filter(product=>product.endMill)){
+  assert.ok(endMillCatalog.includes(`href="${productPath(product.id)}"`) || endMillCatalog.includes(`href="${productPath(product.id).replace(/\/$/,"")}"`),"End mill series is not linked from the collection: "+product.id);
+}
+const whatsapp=whatsappContact(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER);
+for(const path of ["/", "/products/", "/contact/"]){
+  const html=read(join(root,path,"index.html"));
+  assert.ok(html.includes(`href="mailto:${site.email}"`),"Business email missing: "+path);
+  assert.ok(html.includes(`href="${whatsapp.href}"`),"Business messaging link missing: "+path);
+}
+const catalog=read(join(root,"products/index.html"));
+assert.ok(catalog.includes('id="product-catalogs"'),"Product catalog downloads missing.");
+for(const [variable,id] of [["NEXT_PUBLIC_CATALOG_COMPREHENSIVE_URL","1ypTsaZkS6xG3kCnr92GDJm8GSK7yUoDK"],["NEXT_PUBLIC_CATALOG_CUTTING_TOOLS_URL","1zHKcAE0-O_RYGUdxld2KVx8vDZyZsVvc"],["NEXT_PUBLIC_CATALOG_MINING_URL","1qYGap9VCnejLN423YKVjPsUDCXYRRj_Z"],["NEXT_PUBLIC_CATALOG_RODS_URL","1uo0TOC_dONQWQtgeiro2WKu1k6xSJ6gd"]]){
+  const expected=(process.env[variable]||id).replaceAll("&","&amp;");
+  assert.ok(catalog.includes(expected),"Product catalog link missing: "+variable);
+}
 // Product routes not in the data are not generated; both error export pages remain noindex.
 for(const file of ["404.html","404/index.html"]){
   const html=read(join(root,file));

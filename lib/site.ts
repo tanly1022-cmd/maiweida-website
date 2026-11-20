@@ -4,7 +4,7 @@ export const site = {
   name: "MAIVIDA",
   company: "Maivida Tech Co., Ltd.",
   address: "Building 6, Guanshen Intelligent Manufacturing Technology Equipment City, Zhuzhou, Hunan, China",
-  description: "Maivida Tech supplies carbide cutting tools and CNC toolholding, with model selection support for distributors, machining workshops and industrial buyers.",
+  description: "Maivida Tech supplies solid carbide end mills, CNC inserts and toolholding from Zhuzhou, China. Compare catalog models and request application-based selection support.",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || "sales@maivida.com",
 };
 // Keep one production origin even when the environment variable was not set.

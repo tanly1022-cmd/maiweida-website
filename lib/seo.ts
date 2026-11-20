@@ -1,9 +1,10 @@
 import type { Metadata, MetadataRoute } from "next";
 import type { Product } from "./catalog-core";
 import { absoluteUrl, site } from "./site";
+import { END_MILLS_PATH, endMillHeading, endMillSummary } from "./end-mill-catalog";
 
-export const STATIC_PAGE_PATHS = ["/", "/products/", "/about/", "/industries/", "/contact/"] as const;
-export const DEFAULT_SEO_TITLE = "MAIVIDA | Carbide Cutting Tools & CNC Toolholding Supplier";
+export const STATIC_PAGE_PATHS = ["/", "/products/", END_MILLS_PATH, "/about/", "/industries/", "/contact/"] as const;
+export const DEFAULT_SEO_TITLE = "MAIVIDA | Solid Carbide End Mills & Cutting Tools Supplier";
 
 export function canonicalUrl(path: string): string {
   if (/[?#]/.test(path)) throw new Error("Canonical page paths must not contain query strings or fragments.");
@@ -33,6 +34,11 @@ export function pageMetadata(title: string, description: string, path: string, i
 }
 
 export function productMetadata(product: Product): Metadata {
+  const summary = endMillSummary(product);
+  if (summary && product.endMill) {
+    const description = `${product.model}: ${product.endMill.length.toLowerCase()} ${summary.flutes}-flute solid carbide ${product.endMill.geometry.toLowerCase()} end mills, D ${summary.diameter} mm. Compare ${summary.options} catalog options and request a quote from MAIVIDA.`;
+    return pageMetadata(endMillHeading(product), description, productPath(product.id), product.image);
+  }
   const category = product.name || product.category;
   const title = category && category.toLowerCase() !== product.model.toLowerCase()
     ? product.model + " - " + category : product.model;

@@ -6,6 +6,7 @@ import { Container, PageIntro, Arrow } from "./ui";
 import { ProductCard } from "./product-card";
 import { CategorySidebar } from "./category-sidebar";
 import { Icon } from "./icon";
+import { END_MILLS_PATH } from "@/lib/end-mill-catalog";
 import { InsertsReference } from "./inserts-reference";
 import { englishValue, filterProducts, groupProducts, type PopulatedCategory, type Product } from "@/lib/catalog-core";
 
@@ -56,8 +57,9 @@ export function CatalogView({ products, categories, params = new URLSearchParams
   const lastShown = Math.min(page * PAGE_SIZE, resultGroups.length);
 
   return <>
-    <PageIntro label="Model catalog" title="Find your starting point.">
-      <p>Search the available catalog references by model or application. Select a category to narrow the list, then enquire about the details that matter to your process.</p>
+    <PageIntro label="Model catalog" title="Carbide cutting tools & CNC toolholding">
+      <p>Browse solid carbide end mills, CNC inserts and toolholding by model or application. Select a category to compare catalog references, then send your machining requirements for a quote.</p>
+      <Link href={END_MILLS_PATH} className="mt-5 inline-flex min-h-11 items-center gap-4 text-sm font-semibold underline decoration-silver underline-offset-4">Explore solid carbide end mills <Arrow diagonal /></Link>
     </PageIntro>
     <Container className="py-10 md:py-14">
       <form action="/products#results" method="get" className="grid items-end gap-4 border-b border-line pb-8 md:grid-cols-[1fr_1fr_auto]">

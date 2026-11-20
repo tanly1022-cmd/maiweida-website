@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readdirSync, readFileSync, existsSync } from "node:fs";
 import { join, relative, posix } from "node:path";
 import { normalizeCatalog, normalizeCategories } from "../lib/catalog-core";
+import { DEFAULT_SEO_TITLE } from "../lib/seo";
 
 const root = "out";
 assert.ok(existsSync(root), "Run npm run build first.");
@@ -46,14 +47,16 @@ for (const file of files.filter(file => file.endsWith(".html"))) {
 }
 const readJson = (file: string) => JSON.parse(readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
 const categories = normalizeCategories(readJson("data/categories.json"));
-const products = normalizeCatalog(readJson("data/products.json"), categories).filter(product => !product.isFamilyReference || !!product.image);
+const products = normalizeCatalog([...readJson("data/products.json"), ...readJson("data/end-mills.json"), ...readJson("data/mining-tools.json")], categories).map(product => ({
+  ...product, image: product.image && existsSync(join("public", product.image)) ? product.image : undefined,
+})).filter(product => !product.isFamilyReference || !!product.image);
 for (const product of products) {
   assert.ok(inventory.has(`products/${product.id}/index.html`), `Missing product route: ${product.id}`);
-  checkAsset(product.image ?? "/images/product-placeholder.svg", `products/${product.id}/index.html`);
+  checkAsset(product.image ?? (product.endMill ? product.drawing : undefined) ?? "/images/product-placeholder.svg", `products/${product.id}/index.html`);
 }
 for (const asset of ["/images/hero-tool.jpg", "/images/product-placeholder.svg", "/images/og-cover.png"]) checkAsset(asset, "index.html");
 const home = readFileSync(join(root, "index.html"), "utf8");
-assert.ok(home.includes("MAIVIDA | Carbide Cutting Tools &amp; CNC Toolholding Supplier"), "Homepage SEO title missing");
+assert.ok(home.includes(DEFAULT_SEO_TITLE.replaceAll("&", "&amp;")), "Homepage SEO title missing");
 const hero = (home.match(/<img\b[^>]*>/g) ?? []).find(tag => tag.includes('src="/images/hero-tool.jpg"'));
 assert.ok(hero, "Homepage must contain a native img with the root-relative hero JPEG URL");
 assert.match(hero, /loading="eager"/);
