@@ -8,7 +8,7 @@ import { groupProducts, normalizeCatalog, normalizeCategories, populatedCategori
 import { CategorySidebar } from "../components/category-sidebar";
 const read = (file: string) => JSON.parse(readFileSync(file, "utf8"));
 const source = read("data/products.json");
-const manifest = read("category-mapping-manifest.json");
+const manifest = read("tests/fixtures/category-preservation.json");
 const insertSource = source.filter((row: { id: string }) => row.id.startsWith("mwd-insert-"));
 const categories = normalizeCategories(read("data/categories.json"));
 const products = normalizeCatalog([...source, ...read("data/end-mills.json"), ...read("data/mining-tools.json")], categories);
@@ -45,7 +45,7 @@ test("every source record has one valid child and every non-category field is pr
   }
 });
 test("source fields match the original extraction image manifest for every model and image", () => {
-  const images = read("product-image-manifest.json");
+  const images = read("tests/fixtures/product-images.json");
   for (const assignment of images.assignments) {
     const row = source.find((p: {id: string}) => p.id === assignment.product_id);
     assert.equal(row.model, assignment.model);

@@ -6,7 +6,7 @@ import { join } from "node:path";
 import { normalizeCatalog, normalizeCategories, DESCRIPTION_FALLBACK } from "../lib/catalog-core";
 const read = (file: string) => JSON.parse(readFileSync(file, "utf8").replace(/^\uFEFF/, ""));
 const source = read("data/products.json");
-const manifest = read("product-image-manifest.json");
+const manifest = read("tests/fixtures/product-images.json");
 const categories = normalizeCategories(read("data/categories.json"));
 const products = normalizeCatalog(source, categories);
 test("all assigned catalog images exist and match the extraction manifest", () => {
