@@ -86,7 +86,7 @@ test("metadata route handlers are explicitly static and use the actual exported 
 });
 
 test("site uses the owner-supplied public token by default, with a validated environment override", () => {
-  assert.equal(DEFAULT_GOOGLE_SITE_VERIFICATION, "wKYuSGR-gsvtBZiWj5pIHm9yzpwmIect92dqU42tHkQ");
+  assert.equal(DEFAULT_GOOGLE_SITE_VERIFICATION, "sADXte75g7pZMmE2ypUoqP53gMNzN6hHrVbauhReV9Q");
   assert.equal(configuredGoogleVerification(), DEFAULT_GOOGLE_SITE_VERIFICATION);
   assert.equal(configuredGoogleVerification("  "), DEFAULT_GOOGLE_SITE_VERIFICATION);
   assert.equal(configuredGoogleVerification(" another_public-token "), "another_public-token");
